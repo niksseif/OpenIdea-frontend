@@ -5,6 +5,6 @@ cache:
 node_js:
   - "stable"
 services:
-  - postgresql
+  - react
 before_script:
-  - psql -c 'create database openIdea_dv;' -U postgres
+  - psql -c 'create database openIdea_dv;' -U react
