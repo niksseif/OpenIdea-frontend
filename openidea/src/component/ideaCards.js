@@ -4,7 +4,7 @@ import IdeaCard from './ideaCard'
 
 
 //this is the image sourse for the card
-// const src = '/images/wireframe/white-image.png'
+const src = 'https://scstylecaster.files.wordpress.com/2014/03/8058cb6fd5c1f5c20bb4d30a2e44bf7a.jpeg?w=700&h=400&crop=1'
 
 const IdeaCards = () => (
   <Card.Group itemsPerRow={4}>
