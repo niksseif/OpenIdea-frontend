@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Button, Dropdown, Menu } from 'semantic-ui-react'
-import ImageExampleFluid from './image.js'
+import { Menu } from 'semantic-ui-react'
+import ImageExampleFluid from './image'
 
-export default class MenuExampleSizeMassive extends Component {
-  state = { activeItem: 'home' }
+export default class MenuExampleStackable extends Component {
+  state = {}
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -11,28 +11,31 @@ export default class MenuExampleSizeMassive extends Component {
     const { activeItem } = this.state
 
     return (
-      <ImageExampleFluid />
-      <Menu size='massive'>
-        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+      
+      <Menu stackable>
+        <Menu.Item>
+          <img src='/logo.png' />
+        </Menu.Item>
+
         <Menu.Item
-          name='messages'
-          active={activeItem === 'messages'}
+          name='features'
+          active={activeItem === 'features'}
           onClick={this.handleItemClick}
-        />
+        >
+          Features
+        </Menu.Item>
 
-        <Menu.Menu position='right'>
-          <Dropdown item text='Language'>
-            <Dropdown.Menu>
-              <Dropdown.Item>English</Dropdown.Item>
-              <Dropdown.Item>Russian</Dropdown.Item>
-              <Dropdown.Item>Spanish</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+        <Menu.Item
+          name='testimonials'
+          active={activeItem === 'testimonials'}
+          onClick={this.handleItemClick}
+        >
+          Testimonials
+        </Menu.Item>
 
-          <Menu.Item>
-            <Button primary>Sign Up</Button>
-          </Menu.Item>
-        </Menu.Menu>
+        <Menu.Item name='sign-in' active={activeItem === 'sign-in'} onClick={this.handleItemClick}>
+          Sign-in
+        </Menu.Item>
       </Menu>
     )
   }
