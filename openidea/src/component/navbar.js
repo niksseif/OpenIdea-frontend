@@ -11,7 +11,11 @@ export default class MenuExampleStackable extends Component {
     const { activeItem } = this.state
 
     return (
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 494693474ca367aac05eaef473d4c7b78c338420
       <Menu stackable>
         <Menu.Item>
           <img src='/logo.png' />
