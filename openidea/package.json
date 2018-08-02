@@ -5,15 +5,12 @@
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-<<<<<<< HEAD
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
-=======
+    "redux-thunk": "^2.3.0",
     "react-scripts": "1.1.4",
     "semantic-ui-react": "^0.82.1"
->>>>>>> 494693474ca367aac05eaef473d4c7b78c338420
   },
   "scripts": {
     "start": "react-scripts start",
