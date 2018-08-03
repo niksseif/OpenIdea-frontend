@@ -3,8 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './component/navbar'
 import ImageExampleFluid from './component/image'
-import IdeaCards from './component/ideaCards'
+import IdeaCards from './landing/ideaCards'
 class App extends Component {
+  state = {
+    ideas: [
+      { id: 1, title: "kim", color: "red" },
+      { id: 2, title: "nik", color: "blue" },
+      { id: 3, title: "john", color: "red" }
+    ]
+  };
   render() {
     return (
       <div className="App">
