@@ -7,8 +7,8 @@ const IdeaCard = (props) => (
     <Image src={props.image} />
     <Card.Content>
       <Card.Header>{props.title}</Card.Header>
-      <Card.Meta>Joined in 2016</Card.Meta>
-      <Card.Description>{}</Card.Description>
+      <Card.Meta>Joined in 2018</Card.Meta>
+      <Card.Description>{props.description}</Card.Description>
     </Card.Content>
     <Card.Content extra>
       <a>
