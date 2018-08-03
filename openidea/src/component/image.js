@@ -2,13 +2,13 @@ import React from 'react'
 import { Image } from 'semantic-ui-react'
 
 const imageStyle = {
-  width: '1500px',
-  height: '300px'
+  width: '1300px',
+  height: '400px'
 };
 
 
 const ImageExampleFluid = () => <Image
-  src='https://ak6.picdn.net/shutterstock/videos/17439916/thumb/1.jpg'
+  src='http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/504146-VanGogh.jpg?itok=wuLlzirC&resize=1100x619'
   fluid
   style={imageStyle}
   />
