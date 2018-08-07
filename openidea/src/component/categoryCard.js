@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
+
 const CategoryCard = (props) => (
   // need to bring source for the image card as src
   <Card>
