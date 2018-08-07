@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, Icon, Image,Collapse } from 'semantic-ui-react'
-// import { Collapse, CardBody } from 'reactstrap'
+import { Collapse, CardBody } from 'reactstrap'
 
 class CategoryCard extends Component {
   state = { collapse:true }
