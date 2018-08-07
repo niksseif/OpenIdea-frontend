@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './component/navbar'
-import ImageExampleFluid from './component/image'
-import IdeaCards from './landing/ideaCards'
+
+import { Route } from 'react-router-dom'
+import Landingpage from './pages/landingpage'
+import SignupForm from './pages/singupForm'
+import Profile from './pages/profile'
+
+
 class App extends Component {
   state = {
-    ideas: [
-      { id: 1, title: "kim", color: "red" },
-      { id: 2, title: "nik", color: "blue" },
-      { id: 3, title: "john", color: "red" }
-    ]
+    ideas: [],
+    users:[],
+    categories:[]
   };
   render() {
     return (
       <div className="App">
-        <ImageExampleFluid />
-        <Navbar />
-        <IdeaCards />
+        <Route exact path="/" component={Landingpage} />
+        <Route exact path="/signup" component={SignupForm} />
+        <Route exact path="/profile" component={Profile} />
 
       </div>
     );

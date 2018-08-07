@@ -1,19 +1,25 @@
+
+
+
 import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu,Image } from 'semantic-ui-react'
 import ImageExampleFluid from './image'
 
-export default class MenuExampleStackable extends Component {
+export default class Profile extends Component {
   state = {}
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
+    console.log(this.props,"<<<<user in profileNav");
     const { activeItem } = this.state
+    const { user } = this.props
+    console.log("user deconstructed - ", user);
 
     return (
       <Menu stackable>
         <Menu.Item>
-          <img  />
+          <Image src={user === undefined ? null : user.img_url}  avatar />
         </Menu.Item>
 
         <Menu.Item
