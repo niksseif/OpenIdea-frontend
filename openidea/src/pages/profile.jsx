@@ -31,6 +31,8 @@ class ProfilePage extends Component  {
         categories
       })
     }
+    //toggling the idea on user page
+    
 
   render(){
     return(
