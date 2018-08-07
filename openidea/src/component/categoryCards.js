@@ -7,13 +7,14 @@ import IdeaCard from './categoryCard'
 class CategoryCards extends Component  {
 
   render(){
-    console.log(this.props,"<<<<<<");
+    const { users, ideas, categories }= this.props;
     return(
       <Card.Group itemsPerRow={4} >
         {/* //mapping through the ideas to creat the cards for the landing page  */}
-        {this.props.ideas.map(idea => (
+        {ideas.map(idea => (
           // the key is the id of the idea to not get the child error;
           <IdeaCard
+            idea = {idea}
              key={idea.id}
              name={idea.title}
              color={idea.color}
