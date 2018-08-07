@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, Icon, Image } from 'semantic-ui-react'
 
+
 class CategoryCard extends Component {
   state={
     open:true
