@@ -46,12 +46,12 @@ export default class Profile extends Component {
         </Menu.Item>
         {/* this is the search area */}
         <Menu.Item name='search' active={activeItem === 'search'} onClick={this.handleItemClick}  >
-        <div class="ui loading search">
-          <div class="ui icon input">
-            <input class="prompt" type="text" placeholder="Search..."></input>
-              <i class="search icon"></i>
+        <div className="ui loading search">
+          <div className="ui icon input">
+            <input className="prompt" type="text" placeholder="Search..."></input>
+              <i className="search icon"></i>
           </div>
-          <div class="results"></div>
+          <div className="results"></div>
         </div>
 
         </Menu.Item>

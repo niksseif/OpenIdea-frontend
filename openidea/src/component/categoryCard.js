@@ -24,7 +24,7 @@ class CategoryCard extends Component {
                 <a  onClick={ this.toggle } >
                   <Icon name='user' />
                     Show
-                    <Card.Content isOpen={this.state.collapse}>
+                    <Card.Content >
                       <Card>
                         <Card.Description className="">
                         Anim pariatur cliche reprehenderit,
