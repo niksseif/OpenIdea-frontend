@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image,Collapse } from 'semantic-ui-react'
+// import { Collapse, CardBody } from 'reactstrap'
 
 class CategoryCard extends Component {
-  state={
-    open:true
+  state = { collapse:true }
+  toggle= this.toggle;
+  toggle() {
+    this.setState({ collapse: true })
   }
   render(){
     const { idea, users, categories } = this.props
@@ -18,16 +21,24 @@ class CategoryCard extends Component {
           <Card.Content extra>
             <div className="ui styled accordion">
               <div className='active title'>
-                <a expanded={this.state.open} onClick={() => this.setState({ open: !this.state.open })}>
-                  <i className="dropdown icon" ></i>
-                    <Icon name='user' />
-                      Show
+                <a  onClick={ this.toggle } >
+                  <Icon name='user' />
+                    Show
+                    <Card.Content isOpen={this.state.collapse}>
+                      <Card>
+                        <Card.Description className="">
+                        Anim pariatur cliche reprehenderit,
+                         enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                         anim keffiyeh helvetica, craft beer labore wes anderson cred
+                         nesciunt sapiente ea proident.
+                       </Card.Description>
+                      </Card>
+          </Card.Content>
+
                 </a>
               </div>
             </div>
-              <Panel className="active content">
-                  Write about your idea.
-              </Panel>
+
 
           </Card.Content>
         </Card>
