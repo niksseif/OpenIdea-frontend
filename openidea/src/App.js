@@ -18,7 +18,6 @@ class App extends Component {
     categories:[]
   };
   render() {
-
     return (
       <div className="App">
         <Route exact path="/" component={Landingpage} />
