@@ -17,9 +17,9 @@ class App extends Component {
     categories:[]
   };
   render() {
-    console.log(process.env.NODE_ENV,"<<<<this is your process.env");
-    console.log(process.env.REACT_APP_KITTEN,"<<<<react app kitten");
-    console.log(process.env.KITTEN,"<<<<kitten");
+    // console.log(process.env.NODE_ENV,"<<<<this is your process.env");
+    // console.log(process.env.REACT_APP_KITTEN,"<<<<react app kitten");
+    // console.log(process.env.KITTEN,"<<<<kitten");
     return (
       <div className="App">
         <Route exact path="/" component={Landingpage} />
