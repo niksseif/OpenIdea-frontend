@@ -25,8 +25,7 @@ class ProfilePage extends Component  {
       let ideas = await ideasJson.json();
       let users = await usersJson.json();
       let categories = await categoriesJson.json();
-    console.log(ideas,"<<<ideas");
-    console.log(users,"<<<users");
+  
       this.setState({
         ideas,
         users,

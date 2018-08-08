@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import { Card, Icon, Image,Accordion } from 'semantic-ui-react'
 import { Collapse, Button, CardBody } from 'reactstrap';
 import ModalCard from './modal'
+import ModalEdit from './modalEdit.js'
+
 // import '../ideaCardStyle.css'
 
 class CategoryCard extends Component {
 // state of the collaps before on clicking
-  state = { modal: false }
+  state = { modal: false,
+  editMode: false }
 
 
   render(){
@@ -31,10 +34,12 @@ class CategoryCard extends Component {
                   <Card.Description >{idea.description}</Card.Description>
               </Card.Content>
               <Accordion>
+
                 <ModalCard
                   onClick={onSetModalTrue}
                   idea={idea}
                   users={users}
+                  categories={categories}
                 />
               </Accordion>
         </Card>
