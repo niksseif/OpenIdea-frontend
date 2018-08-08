@@ -4,10 +4,12 @@ import ProfileNav from '../component/profileNav.js'
 import CategoryCards from '../component/categoryCards.js'
 
 
+
 class ProfilePage extends Component  {
   state = {
     users: [],
-    ideas:[]
+    ideas:[],
+    categories:[]
   };
   //Connect to backend to grab API
     componentDidMount = async () => {
@@ -31,8 +33,7 @@ class ProfilePage extends Component  {
         categories
       })
     }
-    //toggling the idea on user page
-    
+    //these functions are for callapsing the idea card with all the data in it
 
   render(){
     return(
@@ -45,6 +46,9 @@ class ProfilePage extends Component  {
         user ={this.state.users === undefined ? null : this.state.users[0] }
         ideas={this.state.ideas}
         categories ={this.state.categories}
+
+
+
        />
     </div>
     )

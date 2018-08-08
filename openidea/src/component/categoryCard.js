@@ -1,49 +1,59 @@
 import React, { Component } from "react";
-import { Card, Icon, Image,Collapse } from 'semantic-ui-react'
-import { Collapse, CardBody } from 'reactstrap'
+import { Card, Icon, Image,Accordion } from 'semantic-ui-react'
+import { Collapse, Button, CardBody } from 'reactstrap';
+import Modal from './modal'
+// import '../ideaCardStyle.css'
 
 class CategoryCard extends Component {
-  state = { collapse:true }
-  toggle= this.toggle;
-  toggle() {
-    this.setState({ collapse: true })
-  }
+// state of the collaps before on clicking
+  state = { activeIndex: null }
+
+
   render(){
-    const { idea, users, categories } = this.props
+
+    //setting the state to active index
+    const {activeIndex} = this.state
+    // console.log(this.state,"this is the state on the card pls work");
+    const { idea, users, categories, setIndex } = this.props
     return(
-        <Card>
+      <div>
+      <Card >
           <Image src={idea.image_url} />
-            <Card.Content >
-              <Card.Header>{idea.title}</Card.Header>
-              <Card.Meta>Joined in 2018</Card.Meta>
-              <Card.Description >{idea.description}</Card.Description>
-            </Card.Content>
-          <Card.Content extra>
-            <div className="ui styled accordion">
-              <div className='active title'>
-                <a  onClick={ this.toggle } >
-                  <Icon name='user' />
-                    Show
-                    <Card.Content >
-                      <Card>
-                        <Card.Description className="">
-                        Anim pariatur cliche reprehenderit,
-                         enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                         anim keffiyeh helvetica, craft beer labore wes anderson cred
-                         nesciunt sapiente ea proident.
-                       </Card.Description>
-                      </Card>
-          </Card.Content>
+              <Card.Content >
+                <Card.Header>{idea.title}</Card.Header>
+                <Card.Meta>Joined in 2018</Card.Meta>
+                <Card.Description >{idea.description}</Card.Description>
+              </Card.Content>
+            <Accordion>
+                <Button  active={activeIndex === null} index={0} onClick={() => setIndex( )}>
 
-                </a>
-              </div>
-            </div>
+                    Edit your idea</Button>
 
+            </Accordion>
 
-          </Card.Content>
-        </Card>
+      </Card>
+      {this.props.showDescription &&
+        <Modal
+        trigger={<Button>See details</Button>}
+        idea={idea}
+        users={users}
+
+      />
+      }
+    </div>
     )
   }
 }
 
 export default CategoryCard;
+{/* <Accordion>
+        <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
+          <Icon name='dropdown' />
+          What is a dog?
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 0}>
+          <p>
+            A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can
+            be found as a welcome guest in many households across the world.
+          </p>
+        </Accordion.Content> */}
