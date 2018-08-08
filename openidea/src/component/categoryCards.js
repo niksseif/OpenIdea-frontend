@@ -1,13 +1,13 @@
 
 import React, { Component } from "react";
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image,Grid } from 'semantic-ui-react'
 import IdeaCardForProfile from './categoryCard'
 
 
 class CategoryCards extends Component  {
 
     state = { activeIndex: null }
-
+    //seting the index of the card to ictive index to trigger the modal
     setIndex = (activeIndex) => {
       console.log("is this true or false", activeIndex === this.state.activeIndex);
       console.log("activeIndex", activeIndex, "state.activeIndex", this.state.activeIndex);
@@ -23,7 +23,7 @@ class CategoryCards extends Component  {
   render(){
     const { users, ideas, categories }= this.props;
     return(
-      <Card.Group itemsPerRow={5} >
+      <Card.Group itemsPerRow={4} centered columns={4} >
         {/* //mapping through the ideas to creat the cards for the landing page  */}
         {ideas.map((idea,idx,categories,users ) => (
           // the key is the id of the idea to not get the child error;
