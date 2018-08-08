@@ -1,21 +1,41 @@
-import React from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Divider, Form, Label, Checkbox, Button } from 'semantic-ui-react'
 
-const signupFormComponent = () => (
-  <Form>
-    <Form.Field>
-      <label>Name</label>
-      <input placeholder='First Name' />
-    </Form.Field>
-    <Form.Field>
-      <label>Password</label>
-      <input placeholder='Last Name' />
-    </Form.Field>
-    <Form.Field>
-      <Checkbox label='I agree to the Terms and Conditions' />
-    </Form.Field>
-    <Button type='submit'>Submit</Button>
-  </Form>
-)
+class LabelExamplePointing extends Component {
+  render(){
+        console.log(this.props,"<<<<this.props");
+    return(
 
-export default signupFormComponent
+      <Form>
+        <Form.Field inline>
+            <Divider />
+
+            <br>
+            </br>
+            <br>
+            </br>
+            <br>
+            </br>
+          <input type='text' placeholder='Username' className="username"/>
+          <Label basic color='red' pointing='left'>
+            Enter your username
+          </Label>
+        </Form.Field>
+
+        <Form.Field inline>
+          <input type='text' placeholder='Password' className="password"/>
+          <Label basic color='red' pointing='left'>
+            Enter your password
+          </Label>
+
+        </Form.Field>
+        <Form.Field>
+          <Checkbox label='I agree to the Terms and Conditions' />
+        </Form.Field>
+        <Button type='submit' >Submit</Button>
+
+      </Form>
+    )
+  }
+}
+export default LabelExamplePointing

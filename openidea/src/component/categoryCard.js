@@ -1,47 +1,49 @@
 import React, { Component } from "react";
-import { Card, Icon, Image,Collapse } from 'semantic-ui-react'
-// import { Collapse, CardBody } from 'reactstrap'
+import { Card, Icon, Image,Accordion } from 'semantic-ui-react'
+import { Collapse, Button, CardBody } from 'reactstrap';
+import ModalCard from './modal'
+import ModalEdit from './modalEdit.js'
+
+// import '../ideaCardStyle.css'
 
 class CategoryCard extends Component {
-  state = { collapse:true }
-  toggle= this.toggle;
-  toggle() {
-    this.setState({ collapse: true })
-  }
+// state of the collaps before on clicking
+  state = { modal: false,
+  editMode: false }
+
+
   render(){
-    const { idea, users, categories } = this.props
+    const onSetModalTrue =(e)=>{
+      e.preventDefault()
+      console.log('on Modal true')
+      this.setState({modal: true})
+      console.log(this.state,"<<<this state");
+    }
+
+    //setting the state to active index
+    const {activeIndex} = this.state
+    // console.log(this.state,"this is the state on the card pls work");
+    const { idea, users, categories, setIndex } = this.props
     return(
-        <Card>
+      <div>
+        <Card >
           <Image src={idea.image_url} />
-            <Card.Content >
+           <Card.Content >
               <Card.Header>{idea.title}</Card.Header>
-              <Card.Meta>Joined in 2018</Card.Meta>
-              <Card.Description >{idea.description}</Card.Description>
-            </Card.Content>
-          <Card.Content extra>
-            <div className="ui styled accordion">
-              <div className='active title'>
-                <a  onClick={ this.toggle } >
-                  <Icon name='user' />
-                    Show
-                    <Card.Content >
-                      <Card>
-                        <Card.Description className="">
-                        Anim pariatur cliche reprehenderit,
-                         enim eiusmod high life accusamus terry richardson ad squid. Nihil
-                         anim keffiyeh helvetica, craft beer labore wes anderson cred
-                         nesciunt sapiente ea proident.
-                       </Card.Description>
-                      </Card>
-          </Card.Content>
+                <Card.Meta>Joined in 2018</Card.Meta>
+                  <Card.Description >{idea.description}</Card.Description>
+              </Card.Content>
+              <Accordion>
 
-                </a>
-              </div>
-            </div>
-
-
-          </Card.Content>
+                <ModalCard
+                  onClick={onSetModalTrue}
+                  idea={idea}
+                  users={users}
+                  categories={categories}
+                />
+              </Accordion>
         </Card>
+    </div>
     )
   }
 }

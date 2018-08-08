@@ -11,10 +11,10 @@ export default class Profile extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
-    console.log(this.props,"<<<<user in profileNav");
+
     const { activeItem } = this.state
     const { user } = this.props
-    console.log("user deconstructed - ", user);
+
 
     return (
       <Menu stackable>
