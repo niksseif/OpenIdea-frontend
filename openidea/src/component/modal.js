@@ -51,7 +51,9 @@ if(!this.state.edit) {
             <Modal>
                 <Modal.Header>{this.props.idea.title}</Modal.Header>
                 <Modal.Content image scrolling>
-              <ModalEdit />
+              <ModalEdit
+                idea={this.props.idea}
+              />
             </Modal.Content>
             </Modal>
           )
