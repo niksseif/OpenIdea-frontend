@@ -8,8 +8,10 @@ import ModalEdit from './modalEdit.js'
 
 class CategoryCard extends Component {
 // state of the collaps before on clicking
-  state = { modal: false,
-  editMode: false }
+  state = {
+  modal: false,
+  editMode: false
+}
 
 
   render(){

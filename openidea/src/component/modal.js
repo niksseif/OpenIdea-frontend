@@ -20,10 +20,10 @@ class ModalCard extends Component{
 
       return(
         <div>
-          <Modal trigger={<Button>See details</Button>}>
+          {/* <Modal trigger={<Button>See details</Button>}> */}
             {this.state.edit === true ? this.renderEditMode()
             : this.renderDisplayMode ()}
-          </Modal>
+          {/* </Modal> */}
         </div>
       )
       }
