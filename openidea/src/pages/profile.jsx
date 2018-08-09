@@ -18,18 +18,20 @@ class ProfilePage extends Component  {
   // loading messages from the server
     getDataFromAPI = async () => {
   // fetch messagesJson
-      const ideasJson = await fetch('http://localhost:3000/ideas')
+  console.log("befor user fetch");
       const usersJson = await fetch('http://localhost:3000/users')
-      const  categoriesJson = await fetch('http://localhost:3000/categories')
+      console.log(usersJson,"<<<after users fetch");
+      const ideasJson = await fetch('http://localhost:3000/ideas')
+      //add the categories api to the fron end
+      // const  categoriesJson = await fetch('http://localhost:3000/categories')
 
-      let ideas = await ideasJson.json();
       let users = await usersJson.json();
-      let categories = await categoriesJson.json();
-  
+      let ideas = await ideasJson.json();
+      // let categories = await categoriesJson.json();
+
       this.setState({
         ideas,
         users,
-        categories
       })
     }
     //these functions are for callapsing the idea card with all the data in it
@@ -37,18 +39,15 @@ class ProfilePage extends Component  {
   render(){
     return(
       <div>
-        {/*  This will be the logged in user getting passed in to the Profile */}
-      <ProfileNav
-        user ={this.state.users === undefined ? null : this.state.users[0] }
-       />
-      <CategoryCards
-        user ={this.state.users === undefined ? null : this.state.users[0] }
-        ideas={this.state.ideas}
-        categories ={this.state.categories}
-
-
-
-       />
+          {/*  This will be the logged in user getting passed in to the Profile */}
+        <ProfileNav
+          user ={this.state.users === undefined ? null : this.state.users[0] }
+         />
+        <CategoryCards
+          user ={this.state.users === undefined ? null : this.state.users[0] }
+          ideas={this.state.ideas}
+          // categories ={this.state.categories}
+         />
     </div>
     )
   }
