@@ -16,16 +16,17 @@ class ProfilePage extends Component  {
       await this.getDataFromAPI()
     }
   // loading messages from the server
-    getDataFromAPI = async () => {
-  // fetch messagesJson
+   getDataFromAPI = async () => {
+
+  // fetch ideasJson,users and  categories
       const ideasJson = await fetch('http://localhost:3000/ideas')
       const usersJson = await fetch('http://localhost:3000/users')
-      const  categoriesJson = await fetch('http://localhost:3000/categories')
+      const categoriesJson = await fetch('http://localhost:3000/categories')
 
       let ideas = await ideasJson.json();
       let users = await usersJson.json();
       let categories = await categoriesJson.json();
-  
+
       this.setState({
         ideas,
         users,
