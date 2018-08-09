@@ -77,7 +77,6 @@ class LabelExamplePointing extends Component {
             type='text'
             placeholder='Password'
             className="password"
-            // value={password}
             onChange={updatePassword}
           />
           <Label basic color='red' pointing='left'>
@@ -88,8 +87,10 @@ class LabelExamplePointing extends Component {
           <Checkbox label='I agree to the Terms and Conditions' />
         </Form.Field>
         <Button
+          href='#'
           type='submit'
           onClick={this.props.sendData}
+
         >
           Submit
         </Button>
