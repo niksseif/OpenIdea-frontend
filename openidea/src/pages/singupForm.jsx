@@ -20,7 +20,7 @@ updateFormState = (key, value) =>{
 }
 sendData = async () => {
   console.log("User form state :", this.state )
-  const response = await fetch('http://localhost:3000/api/users', {
+  const response = await fetch('http://localhost:3000/users', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

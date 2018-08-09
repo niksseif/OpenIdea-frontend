@@ -88,8 +88,10 @@ class LabelExamplePointing extends Component {
           <Checkbox label='I agree to the Terms and Conditions' />
         </Form.Field>
         <Button
+          href='#'
           type='submit'
           onClick={this.props.sendData}
+
         >
           Submit
         </Button>
