@@ -9,7 +9,7 @@ class ModalEdit extends Component {
   render() {
     const { value } = this.state
     return (
-      <Form>
+      <Form >
         <Image
           src='https://react.semantic-ui.com/images/wireframe/image.png'
           size='small'

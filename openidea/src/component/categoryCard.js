@@ -9,9 +9,8 @@ import ModalEdit from './modalEdit.js'
 class CategoryCard extends Component {
 // state of the collaps before on clicking
   state = {
-  modal: false,
-  editMode: false
-}
+    modal: false,
+    edit: false }
 
 
   render(){
@@ -38,11 +37,13 @@ class CategoryCard extends Component {
               <Accordion>
 
                 <ModalCard
+
                   onClick={onSetModalTrue}
                   idea={idea}
                   users={users}
                   categories={categories}
                 />
+
               </Accordion>
         </Card>
     </div>
