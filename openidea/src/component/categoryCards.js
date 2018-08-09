@@ -38,6 +38,7 @@ class CategoryCards extends Component  {
              showDescription={this.state.activeIndex === idx }
              categoriesTitle={categories.title}
              users={users}
+             
            />
         ))}
 

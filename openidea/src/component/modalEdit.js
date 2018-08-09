@@ -6,12 +6,25 @@ class ModalEdit extends Component {
     edit:true,
     selectedFile: null
   }
+
   fileSelectHandler = event => {
     this.setState({
       selectedFile: event.target.files[0]
     })
   }
+  //updating the state of the key value of the text area
+  updateFormState = (key, value) =>{
+    console.log(key, value, 'name and value')
+    this.setState({
+      [key]: value
+    })
+  }
   handleChange = (e, { value }) => this.setState({ value })
+  
+  const updateAbout = (e) => {
+     e.preventDefault()
+    this.props.updateFormState("name",e.target.value)
+  }
 
   fileUploadHandler = async () => {
 
@@ -24,9 +37,7 @@ class ModalEdit extends Component {
         },
         body: JSON.stringify( this.state )
         })
-
       console.log(response,"<<<<RESPONSE");
-
   }
 
   render() {
@@ -44,6 +55,8 @@ class ModalEdit extends Component {
           control={TextArea}
           label='About your idea'
           placeholder='Tell us more about you...'
+          onChange={updateAbout}
+
         />
         <Form.Field
           control={Checkbox}
