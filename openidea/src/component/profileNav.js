@@ -19,7 +19,7 @@ export default class Profile extends Component {
     return (
       <Menu stackable>
         <Menu.Item>
-          <Image src={user === undefined ? null : user.img_url}  avatar />
+          <Image src={user === undefined ? null : user.image_url}  avatar />
         </Menu.Item>
 
         <Menu.Item

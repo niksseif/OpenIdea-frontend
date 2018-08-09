@@ -23,7 +23,7 @@ class CategoryCards extends Component  {
   render(){
     const { users, ideas, categories }= this.props;
     return(
-      <Card.Group itemsPerRow={4} centered columns={4} >
+      <Card.Group itemsPerRow={5} centered  >
         {/* //mapping through the ideas to creat the cards for the landing page  */}
         {ideas.map((idea,idx,categories,users ) => (
           // the key is the id of the idea to not get the child error;
