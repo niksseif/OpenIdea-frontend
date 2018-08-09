@@ -77,7 +77,6 @@ class LabelExamplePointing extends Component {
             type='text'
             placeholder='Password'
             className="password"
-            // value={password}
             onChange={updatePassword}
           />
           <Label basic color='red' pointing='left'>
