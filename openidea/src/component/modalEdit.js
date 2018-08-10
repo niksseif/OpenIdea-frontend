@@ -4,7 +4,8 @@ import { Button, Checkbox, Form, Input, Radio, Select, TextArea, Image } from 's
 class ModalEdit extends Component {
   state = {
     edit:true,
-    selectedFile: null
+    selectedFile: null,
+    key: ""
   }
 
   fileSelectHandler = event => {
@@ -16,21 +17,22 @@ class ModalEdit extends Component {
   updateFormState = (key, value) =>{
     console.log(key, value, 'name and value')
     this.setState({
-      [key]: value
+      key: value
     })
   }
   handleChange = (e, { value }) => this.setState({ value })
-  
-  const updateAbout = (e) => {
-     e.preventDefault()
-    this.props.updateFormState("name",e.target.value)
+
+  //updating the about value
+ updateAbout = (e) => {
+    console.log("i am the value of the about");
+    e.preventDefault()
+    this.updateFormState("about",e.target.value)
   }
 
   fileUploadHandler = async () => {
-
       console.log("User form state :", this.state )
-      const response = await fetch('http://localhost:3000/ideas', {
-        method: 'POST',
+      const response = await fetch('http://localhost:3000/ideas/id', {
+        method: 'PUT',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -52,10 +54,11 @@ class ModalEdit extends Component {
         />
 
         <Form.Field
+          className="about"
           control={TextArea}
           label='About your idea'
           placeholder='Tell us more about you...'
-          onChange={updateAbout}
+          onChange={this.updateAbout}
 
         />
         <Form.Field

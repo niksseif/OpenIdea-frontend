@@ -53,7 +53,6 @@ class LabelExamplePointing extends Component {
             type='text'
             placeholder='email'
             className="email"
-            // value={email}
             onChange={updateEmail}
           />
           <Label basic color='red' pointing='left'>
@@ -65,7 +64,6 @@ class LabelExamplePointing extends Component {
             type='text'
             placeholder='image_url'
             className="image_url"
-            // value={image_url}
             onChange={updateImage}
           />
           <Label basic color='red' pointing='left'>
