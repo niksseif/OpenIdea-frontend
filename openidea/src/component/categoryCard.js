@@ -10,25 +10,29 @@ class CategoryCard extends Component {
 // state of the collaps before on clicking
   state = {
     modal: false,
-    edit: false }
+    edit: false
+  }
 
 
   render(){
+    //this is a function to check if the model is clicked
     const onSetModalTrue =(e)=>{
       e.preventDefault()
       console.log('on Modal true')
       this.setState({modal: true})
-      console.log(this.state,"<<<this state");
+
     }
+
 
     //setting the state to active index
     const {activeIndex} = this.state
-    // console.log(this.state,"this is the state on the card pls work");
     const { idea, users, categories, setIndex } = this.props
+
+    console.log(idea, "idea from category card");
     return(
       <div>
         <Card >
-          <Image src={idea.image_url} />
+          <Image src={idea.image_url}/>
            <Card.Content >
               <Card.Header>{idea.title}</Card.Header>
                 <Card.Meta>Joined in 2018</Card.Meta>
@@ -37,11 +41,11 @@ class CategoryCard extends Component {
               <Accordion>
 
                 <ModalCard
-
                   onClick={onSetModalTrue}
                   idea={idea}
-                  users={users}
-                  categories={categories}
+                  users={this.users}
+                  categories={this.categories}
+                  key={idea.id}
                 />
 
               </Accordion>

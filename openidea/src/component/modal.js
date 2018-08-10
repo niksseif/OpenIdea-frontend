@@ -4,8 +4,9 @@ import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
 import ModalEdit from './modalEdit.js'
 
 class ModalCard extends Component{
-  state= { edit: false }
-
+  state= {
+    edit: false,
+  }
 
   //this is the function for toggling between two state edit
   toggleEdit = (e) => {
@@ -18,8 +19,9 @@ class ModalCard extends Component{
 
   //if the edit state is false just show modal
   render(){
-
-if(!this.state.edit) {
+    console.log(this.props.idea,"<<<<<idea from modal");
+    if(!this.state.edit) {
+      // console.log("idea from if statement",this.props.idea);
           return (
             <Modal trigger={<Button>check idea</Button>}>
             <Modal.Header>{this.props.idea.title}</Modal.Header>
@@ -42,17 +44,19 @@ if(!this.state.edit) {
                 >
                 Edit <Icon name='chevron right' />
               </Button>
-
-
             </Modal.Actions>
           </Modal>
         )} else {
           return (
+
             <Modal>
                 <Modal.Header>{this.props.idea.title}</Modal.Header>
                 <Modal.Content image scrolling>
               <ModalEdit
                 idea={this.props.idea}
+                user={this.user}
+                key={this.props.idea.id}
+
               />
             </Modal.Content>
             </Modal>

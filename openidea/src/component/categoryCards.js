@@ -9,12 +9,12 @@ class CategoryCards extends Component  {
     state = { activeIndex: null }
     //seting the index of the card to ictive index to trigger the modal
     setIndex = (activeIndex) => {
-      console.log("is this true or false", activeIndex === this.state.activeIndex);
-      console.log("activeIndex", activeIndex, "state.activeIndex", this.state.activeIndex);
+      // console.log("is this true or false", activeIndex === this.state.activeIndex);
+      // console.log("activeIndex", activeIndex, "state.activeIndex", this.state.activeIndex);
       if(this.state.activeIndex === activeIndex) {
         this.setState({activeIndex: null})
       } else {
-        console.log(activeIndex,"<<<<<activeIndex");
+
         this.setState({activeIndex})
       }
      this.setState({showDescription: 3})
@@ -38,7 +38,7 @@ class CategoryCards extends Component  {
              showDescription={this.state.activeIndex === idx }
              categoriesTitle={categories.title}
              users={users}
-             
+
            />
         ))}
 
