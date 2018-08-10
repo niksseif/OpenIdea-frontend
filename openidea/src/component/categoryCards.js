@@ -9,12 +9,12 @@ class CategoryCards extends Component  {
     state = { activeIndex: null }
     //seting the index of the card to ictive index to trigger the modal
     setIndex = (activeIndex) => {
-      console.log("is this true or false", activeIndex === this.state.activeIndex);
-      console.log("activeIndex", activeIndex, "state.activeIndex", this.state.activeIndex);
+      // console.log("is this true or false", activeIndex === this.state.activeIndex);
+      // console.log("activeIndex", activeIndex, "state.activeIndex", this.state.activeIndex);
       if(this.state.activeIndex === activeIndex) {
         this.setState({activeIndex: null})
       } else {
-        console.log(activeIndex,"<<<<<activeIndex");
+
         this.setState({activeIndex})
       }
      this.setState({showDescription: 3})
@@ -23,7 +23,7 @@ class CategoryCards extends Component  {
   render(){
     const { users, ideas, categories }= this.props;
     return(
-      <Card.Group itemsPerRow={4} centered columns={4} >
+      <Card.Group itemsPerRow={5} centered  >
         {/* //mapping through the ideas to creat the cards for the landing page  */}
         {ideas.map((idea,idx,categories,users ) => (
           // the key is the id of the idea to not get the child error;
@@ -38,6 +38,7 @@ class CategoryCards extends Component  {
              showDescription={this.state.activeIndex === idx }
              categoriesTitle={categories.title}
              users={users}
+
            />
         ))}
 
