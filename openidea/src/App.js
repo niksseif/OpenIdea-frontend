@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom'
 import Landingpage from './pages/landingpage'
 import SignupForm from './pages/singupForm'
 import Profile from './pages/profile'
+import Feed from './pages/feedPage'
 
 
 
@@ -23,7 +24,7 @@ class App extends Component {
         <Route exact path="/" component={Landingpage} />
         <Route exact path="/signup" component={SignupForm} />
         <Route exact path="/profile" component={Profile} />
-        {/* <Route exact path="/users" component={Users} /> */}
+        <Route exact path="/user/ideas" component={Feed} />
 
       </div>
     );

@@ -10,8 +10,6 @@ class ModalCard extends Component{
 
   //this is the function for toggling between two state edit
   toggleEdit = (e) => {
-    console.log("hello");
-    console.log(this.state,"<<<state after click");
     e.preventDefault()
     this.setState({ edit :!this.state.edit })
   }
