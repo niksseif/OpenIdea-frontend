@@ -13,7 +13,7 @@ export default class Profile extends Component {
   render() {
 
     const { activeItem } = this.state
-    const { user } = this.props
+    const { user, usersIdeas } = this.props
 
 
     return (
