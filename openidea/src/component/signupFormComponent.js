@@ -25,17 +25,10 @@ class LabelExamplePointing extends Component {
       }
 
     return(
-
+<Segment style={{ backgroundColor:'lightgrey',marginTop:100}}>
       <Form>
-        <Form.Field inline>
+        <Form.Field >
             <Divider />
-
-            <br>
-            </br>
-            <br>
-            </br>
-            <br>
-            </br>
           <input
             type='text'
             placeholder='name'
@@ -43,12 +36,10 @@ class LabelExamplePointing extends Component {
             // value={name}
             onChange={updateName}
           />
-          <Label basic color='red' pointing='left'>
+          <Label basic pointing='left'>
             Enter your name
           </Label>
-        </Form.Field>
 
-        <Form.Field inline>
           <input
             type='text'
             placeholder='email'
@@ -84,17 +75,9 @@ class LabelExamplePointing extends Component {
         <Form.Field>
           <Checkbox label='I agree to the Terms and Conditions' />
         </Form.Field>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         <Button
-=======
-        <Button 
         style={{color:'orange'}}
->>>>>>> parent of 8049407... add images to the landing page, add logo style, modify image style on landing page
-=======
-        <Button 
-        style={{color:'orange'}}
->>>>>>> parent of 8049407... add images to the landing page, add logo style, modify image style on landing page
           href='#'
           type='submit'
           onClick={this.props.sendData}
@@ -104,23 +87,8 @@ class LabelExamplePointing extends Component {
         </Button>
 
       </Form>
+    </Segment>
     )
   }
 }
 export default LabelExamplePointing
-// <Segment style={{ backgroundColor:'#FF8030',marginTop:100}}>
-{/* <Form style={{ marginTop:50}}>
-  <Form.Field>
-    <label>First Name</label>
-    <input placeholder='First Name' style={{ width:450}} />
-  </Form.Field>
-  <Form.Field>
-    <label>Last Name</label>
-    <input placeholder='Last Name'style={{ width:450}} />
-  </Form.Field>
-  <Form.Field>
-    <Checkbox label='I agree to the Terms and Conditions' />
-  </Form.Field>
-  <Button type='submit'>Submit</Button>
-</Form>
-</Segment> */}
