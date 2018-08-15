@@ -5,7 +5,7 @@ import Navbar from '../component/navbar'
 import ImageExampleFluid from '../component/image'
 import IdeaCards from '../component/ideaCards.js'
 import logo from '../logo.svg';
-import landingpageImage from '../landingpage1.jpg'
+
 
 class landingpage extends Component  {
   state = {
@@ -20,20 +20,23 @@ class landingpage extends Component  {
   // fetch messagesJson
       const ideasJson = await fetch('http://localhost:3000/ideas')
       let ideas = await ideasJson.json()
+
+
       this.setState({
         ideas,
       })
     }
   render(){
+
+
     return(
-        <div>
-          <ImageExampleFluid
-            // landingpageImage={landingpageImage}
-          />
-          <Navbar />
-          <IdeaCards
-          ideas={this.state.ideas} />
-        </div>
+
+      <div>
+        <ImageExampleFluid />
+        <Navbar />
+        <IdeaCards
+        ideas={this.state.ideas} />
+      </div>
     )
   }
 }
