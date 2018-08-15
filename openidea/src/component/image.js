@@ -1,8 +1,11 @@
 import React from 'react'
 import { Image } from 'semantic-ui-react'
+import landingpageImage from '../landingpage3.png'
+
+
 
 const imageStyle = {
-  width: '1300px',
+  width: '100%',
   height: '400px'
 };
 const headerStyle={
@@ -11,14 +14,22 @@ const headerStyle={
   fontSize:'30px'
 }
 
+const top = {
+    position: 'absolute',
+    top: '150px',
+    left: '90px',
+    fontWeight: 'bold',
+    color:'white',
+    fontSize:'60px'
+}
 const ImageExampleFluid = () => (
   <div className='container'>
-    <h1 style={headerStyle}>Open Idea</h1>
     <Image
-      src='http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/504146-VanGogh.jpg?itok=wuLlzirC&resize=1100x619'
+      src={landingpageImage}
       fluid
       style={imageStyle}
       />
+        <h1 style={top}>Open Idea</h1>
 </div>
 )
 

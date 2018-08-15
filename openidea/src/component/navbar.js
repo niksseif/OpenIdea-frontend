@@ -29,10 +29,10 @@ export default class MenuExampleStackable extends Component {
           active={activeItem === 'testimonials'}
           onClick={this.handleItemClick}
         >
-          Testimonials
+          Contact us
         </Menu.Item>
 
-        <Menu.Item name='sign-in' active={activeItem === 'sign-in'} onClick={this.handleItemClick}>
+        <Menu.Item name='sign-in' active={activeItem === 'sign-in'} onClick={this.handleItemClick} href="/login">
           Sign-in
         </Menu.Item>
         <Menu.Item name='sign-in' active={activeItem === 'sign-up'} onClick={this.handleItemClick} href="/signup" >

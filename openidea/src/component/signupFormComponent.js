@@ -65,18 +65,17 @@ class LabelExamplePointing extends Component {
           />
 
         </Form.Field>
-        <Form.Field>
-          <Checkbox label='I agree to the Terms and Conditions' />
-        </Form.Field>
-        <Button 
-        style={{color:'orange'}}
-          href='#'
-          type='submit'
-          onClick={this.props.sendData}
-
-        >
-          Submit
-        </Button>
+          <Form.Field>
+            <Checkbox label='I agree to the Terms and Conditions' />
+          </Form.Field>
+          <Button
+            style={{color:'orange'}}
+            href='#'
+            type='submit'
+            onClick={this.props.sendData}
+          >
+            Submit
+          </Button>
 
       </Form>
     </Segment>
@@ -84,19 +83,3 @@ class LabelExamplePointing extends Component {
   }
 }
 export default LabelExamplePointing
-// <Segment style={{ backgroundColor:'#FF8030',marginTop:100}}>
-{/* <Form style={{ marginTop:50}}>
-  <Form.Field>
-    <label>First Name</label>
-    <input placeholder='First Name' style={{ width:450}} />
-  </Form.Field>
-  <Form.Field>
-    <label>Last Name</label>
-    <input placeholder='Last Name'style={{ width:450}} />
-  </Form.Field>
-  <Form.Field>
-    <Checkbox label='I agree to the Terms and Conditions' />
-  </Form.Field>
-  <Button type='submit'>Submit</Button>
-</Form>
-</Segment> */}
