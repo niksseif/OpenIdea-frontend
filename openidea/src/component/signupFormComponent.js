@@ -25,7 +25,7 @@ class LabelExamplePointing extends Component {
       }
 
     return(
-        <Segment style={{ backgroundColor:'lightgrey',marginTop:100}}>
+        <Segment style={{ backgroundColor:'lightgrey', marginLeft:100,marginRight:100}}>
               <Form >
                 <Form.Field >
                     <Divider />
@@ -68,9 +68,11 @@ class LabelExamplePointing extends Component {
                     <Checkbox label='I agree to the Terms and Conditions' />
                   </Form.Field>
                   <Button
+                    color='orange'
                     href='#'
                     type='submit'
                     onClick={this.props.sendData}
+                    
                   >
                     Submit
                   </Button>

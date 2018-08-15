@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SingupFormComponent from '../component/signupFormComponent.js'
-
+import { Segment } from 'semantic-ui-react'
 
 class signupForm extends Component  {
 
@@ -29,7 +29,7 @@ sendData = async () => {
     body: JSON.stringify( this.state )
     })
 
-  console.log(response,"<<<<RESPONSE");
+
 
 }
 
@@ -37,8 +37,8 @@ sendData = async () => {
   render(){
     //posting to the api
     return(
-      
-      <div className="container">
+
+      <Segment style={{width:1300,marginTop:100}}>
 
       <SingupFormComponent
       response={this.response}
@@ -49,7 +49,7 @@ sendData = async () => {
       updateFormState={this.updateFormState}
       sendData={this.sendData}
     />
-    </div>
+  </Segment>
     )
   }
 }
