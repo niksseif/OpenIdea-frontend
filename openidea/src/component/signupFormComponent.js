@@ -5,20 +5,24 @@ class LabelExamplePointing extends Component {
   render(){
     console.log(this.props, 'this props')
     const { name, email, image_url, password,} = this.props
-        // console.log(this.props,"<<<<this.props");
+
+      //updateName
       const updateName = (e) => {
          e.preventDefault()
         this.props.updateFormState("name",e.target.value)
       }
+      // updateEmail
       const updateEmail = (e) => {
         e.preventDefault()
         this.props.updateFormState("email",e.target.value)
       }
+      //updateImage
       const updateImage = (e) => {
         e.preventDefault("image_url",e.target.value)
         this.props.updateFormState("image_url",e.target.value)
 
       }
+      //update password
       const updatePassword = (e) => {
         e.preventDefault("password",e.target.value)
         this.props.updateFormState("password",e.target.value)
@@ -68,13 +72,14 @@ class LabelExamplePointing extends Component {
                     <Checkbox label='I agree to the Terms and Conditions' />
                   </Form.Field>
                   <Button
-                    color='orange'
-                    href='#'
+                    fluid size='large'
+                    style={{color:'orange'}}
+                    href='/profile'
                     type='submit'
                     onClick={this.props.sendData}
-                    
+
                   >
-                    Submit
+                  Submit
                   </Button>
               </Form>
               </Segment>
