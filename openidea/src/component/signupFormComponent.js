@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider, Form, Label, Checkbox, Button } from 'semantic-ui-react'
+import { Divider, Form, Label, Checkbox, Button, Segment } from 'semantic-ui-react'
 
 class LabelExamplePointing extends Component {
   render(){
@@ -25,68 +25,51 @@ class LabelExamplePointing extends Component {
       }
 
     return(
-
+      <Segment style={{ backgroundColor:'lightgrey',marginTop:100}}>
       <Form>
-        <Form.Field inline>
+        <Form.Field >
             <Divider />
-
-            <br>
-            </br>
-            <br>
-            </br>
-            <br>
-            </br>
           <input
             type='text'
             placeholder='name'
             className="name"
-            // value={name}
             onChange={updateName}
           />
-          <Label basic color='red' pointing='left'>
-            Enter your name
-          </Label>
+
         </Form.Field>
 
-        <Form.Field inline>
+        <Form.Field >
           <input
             type='text'
             placeholder='email'
             className="email"
-            // value={email}
             onChange={updateEmail}
           />
-          <Label basic color='red' pointing='left'>
-            Enter your email
-          </Label>
+
         </Form.Field>
-        <Form.Field inline>
+        <Form.Field >
           <input
             type='text'
             placeholder='image_url'
             className="image_url"
-            // value={image_url}
             onChange={updateImage}
           />
-          <Label basic color='red' pointing='left'>
-            Enter your image_url
-          </Label>
+
         </Form.Field>
-        <Form.Field inline>
+        <Form.Field >
           <input
             type='text'
             placeholder='Password'
             className="password"
             onChange={updatePassword}
           />
-          <Label basic color='red' pointing='left'>
-            Enter your password
-          </Label>
+
         </Form.Field>
         <Form.Field>
           <Checkbox label='I agree to the Terms and Conditions' />
         </Form.Field>
-        <Button
+        <Button 
+        style={{color:'orange'}}
           href='#'
           type='submit'
           onClick={this.props.sendData}
@@ -96,7 +79,24 @@ class LabelExamplePointing extends Component {
         </Button>
 
       </Form>
+    </Segment>
     )
   }
 }
 export default LabelExamplePointing
+// <Segment style={{ backgroundColor:'#FF8030',marginTop:100}}>
+{/* <Form style={{ marginTop:50}}>
+  <Form.Field>
+    <label>First Name</label>
+    <input placeholder='First Name' style={{ width:450}} />
+  </Form.Field>
+  <Form.Field>
+    <label>Last Name</label>
+    <input placeholder='Last Name'style={{ width:450}} />
+  </Form.Field>
+  <Form.Field>
+    <Checkbox label='I agree to the Terms and Conditions' />
+  </Form.Field>
+  <Button type='submit'>Submit</Button>
+</Form>
+</Segment> */}
