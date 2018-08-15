@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Divider, Form, Label, Checkbox, Button, Segment } from 'semantic-ui-react'
+import { Divider, Form, Checkbox, Button, Segment } from 'semantic-ui-react'
 
 class LabelExamplePointing extends Component {
   render(){
-    console.log(this.props, 'this props')
-    const { name, email, image_url, password,} = this.props
-        // console.log(this.props,"<<<<this.props");
+
+    const { name, email, image_url, password, validateForm} = this.props
+
+
+
       const updateName = (e) => {
          e.preventDefault()
         this.props.updateFormState("name",e.target.value)
@@ -43,6 +45,7 @@ class LabelExamplePointing extends Component {
             type='text'
             placeholder='email'
             className="email"
+            pattern='^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$'
             onChange={updateEmail}
           />
 
@@ -70,11 +73,11 @@ class LabelExamplePointing extends Component {
           </Form.Field>
           <Button
             style={{color:'orange'}}
-            href='#'
+            href='/profile'
             type='submit'
             onClick={this.props.sendData}
           >
-            Submit
+            <a href='/profile'>Submit</a>
           </Button>
 
       </Form>
