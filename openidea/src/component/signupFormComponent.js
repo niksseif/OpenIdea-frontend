@@ -85,7 +85,12 @@ class LabelExamplePointing extends Component {
           <Checkbox label='I agree to the Terms and Conditions' />
         </Form.Field>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Button
+=======
+        <Button 
+        style={{color:'orange'}}
+>>>>>>> parent of 8049407... add images to the landing page, add logo style, modify image style on landing page
 =======
         <Button 
         style={{color:'orange'}}

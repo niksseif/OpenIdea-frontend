@@ -60,9 +60,12 @@ class ModalEdit extends Component {
     console.log("this is idea from modal edit", this.props.idea);
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Form >
         {/* // looop through and output an image */}
 =======
+=======
+>>>>>>> parent of 8049407... add images to the landing page, add logo style, modify image style on landing page
       <Form>
 >>>>>>> parent of 8049407... add images to the landing page, add logo style, modify image style on landing page
         <Image
@@ -71,6 +74,7 @@ class ModalEdit extends Component {
           size='small'
           wrapped
         />
+<<<<<<< HEAD
 <<<<<<< HEAD
         <Form.Field
           className="image_url"
@@ -108,10 +112,15 @@ class ModalEdit extends Component {
           <Button />
         </Form.Field>
 =======
+=======
+>>>>>>> parent of 8049407... add images to the landing page, add logo style, modify image style on landing page
 
         <Form.Field control={TextArea} label='About' placeholder='Tell us more about you...' />
         <Form.Field control={Checkbox} label='I agree to the Terms and Conditions' />
         <Form.Field control={Button}>Submit</Form.Field>
+<<<<<<< HEAD
+>>>>>>> parent of 8049407... add images to the landing page, add logo style, modify image style on landing page
+=======
 >>>>>>> parent of 8049407... add images to the landing page, add logo style, modify image style on landing page
       </Form>
     )
