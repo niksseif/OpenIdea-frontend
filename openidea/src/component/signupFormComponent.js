@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider, Form, Label, Checkbox, Button } from 'semantic-ui-react'
+import { Divider, Form, Label, Checkbox, Button, Segment } from 'semantic-ui-react'
 
 class LabelExamplePointing extends Component {
   render(){
@@ -25,75 +25,57 @@ class LabelExamplePointing extends Component {
       }
 
     return(
+        <Segment style={{ backgroundColor:'lightgrey',marginTop:100}}>
+              <Form >
+                <Form.Field >
+                    <Divider />
+                  <input
+                    type='text'
+                    placeholder='name'
+                    className="name"
+                    onChange={updateName}
+                  />
+                </Form.Field>
 
-      <Form>
-        <Form.Field inline>
-            <Divider />
+                <Form.Field >
+                  <input
+                    type='text'
+                    placeholder='email'
+                    className="email"
+                    onChange={updateEmail}
+                  />
 
-            <br>
-            </br>
-            <br>
-            </br>
-            <br>
-            </br>
-          <input
-            type='text'
-            placeholder='name'
-            className="name"
-            // value={name}
-            onChange={updateName}
-          />
-          <Label basic color='red' pointing='left'>
-            Enter your name
-          </Label>
-        </Form.Field>
+                </Form.Field>
+                  <Form.Field >
+                    <input
+                      type='text'
+                      placeholder='image_url'
+                      className="image_url"
+                      onChange={updateImage}
+                    />
 
-        <Form.Field inline>
-          <input
-            type='text'
-            placeholder='email'
-            className="email"
-            onChange={updateEmail}
-          />
-          <Label basic color='red' pointing='left'>
-            Enter your email
-          </Label>
-        </Form.Field>
-        <Form.Field inline>
-          <input
-            type='text'
-            placeholder='image_url'
-            className="image_url"
-            onChange={updateImage}
-          />
-          <Label basic color='red' pointing='left'>
-            Enter your image_url
-          </Label>
-        </Form.Field>
-        <Form.Field inline>
-          <input
-            type='text'
-            placeholder='Password'
-            className="password"
-            onChange={updatePassword}
-          />
-          <Label basic color='red' pointing='left'>
-            Enter your password
-          </Label>
-        </Form.Field>
-        <Form.Field>
-          <Checkbox label='I agree to the Terms and Conditions' />
-        </Form.Field>
-        <Button
-          href='#'
-          type='submit'
-          onClick={this.props.sendData}
+                  </Form.Field>
+                  <Form.Field >
+                      <input
+                        type='text'
+                        placeholder='Password'
+                        className="password"
+                        onChange={updatePassword}
+                      />
 
-        >
-          Submit
-        </Button>
-
-      </Form>
+                  </Form.Field>
+                  <Form.Field>
+                    <Checkbox label='I agree to the Terms and Conditions' />
+                  </Form.Field>
+                  <Button
+                    href='#'
+                    type='submit'
+                    onClick={this.props.sendData}
+                  >
+                    Submit
+                  </Button>
+              </Form>
+              </Segment>
     )
   }
 }

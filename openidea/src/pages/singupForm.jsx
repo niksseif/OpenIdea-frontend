@@ -37,8 +37,9 @@ sendData = async () => {
   render(){
     //posting to the api
     return(
+      
       <div className="container">
-        <br></br>
+
       <SingupFormComponent
       response={this.response}
       name={this.state.name}
