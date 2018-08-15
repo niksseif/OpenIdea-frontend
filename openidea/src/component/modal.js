@@ -35,9 +35,11 @@ class ModalCard extends Component{
                 ))}
               </Modal.Description>
             </Modal.Content>
-            <Modal.Actions>
+            <Modal.Actions
+
+              >
               <Button
-                primary
+                style={{color:'grey'}}
                 onClick={this.toggleEdit}
                 >
                 Edit <Icon name='chevron right' />
