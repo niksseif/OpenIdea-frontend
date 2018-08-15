@@ -16,14 +16,6 @@ class ProfilePage extends Component  {
       await this.getDataFromAPI()
     }
   // loading messages from the server
-<<<<<<< HEAD
-   getDataFromAPI = async () => {
-
-  // fetch ideasJson,users and  categories
-      const ideasJson = await fetch('http://localhost:3000/ideas')
-      const usersJson = await fetch('http://localhost:3000/users')
-      // const categoriesJson = await fetch('http://localhost:3000/categories')
-=======
     getDataFromAPI = async () => {
       // fetch messagesJson
       const usersJson = await fetch('http://localhost:3000/users')
@@ -31,13 +23,9 @@ class ProfilePage extends Component  {
       const ideasJson = await fetch('http://localhost:3000/ideas')
       //add the categories api to the fron end
       // const  categoriesJson = await fetch('http://localhost:3000/categories')
->>>>>>> 1674722f793cb94fc7298fe5a8e2b99fdf10f5a5
 
       let users = await usersJson.json();
-<<<<<<< HEAD
-=======
       let ideas = await ideasJson.json();
->>>>>>> 1674722f793cb94fc7298fe5a8e2b99fdf10f5a5
       // let categories = await categoriesJson.json();
 
       this.setState({

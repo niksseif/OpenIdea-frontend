@@ -25,7 +25,7 @@ class FeedList extends Component  {
       <div>
 
         {usersIdeas.map ((usersIdea) => (
-
+        
           <Feed
             usersIdea = {usersIdea}
             key={usersIdea.id}
