@@ -16,17 +16,27 @@ class ProfilePage extends Component  {
       await this.getDataFromAPI()
     }
   // loading messages from the server
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> c6481a49551d9ef3a1071f84cdb3ca935948a0ea
     getDataFromAPI = async () => {
       // fetch messagesJson
       const usersJson = await fetch('http://localhost:3000/users')
-      console.log(usersJson,"<<<after users fetch");
       const ideasJson = await fetch('http://localhost:3000/ideas')
       //add the categories api to the fron end
       // const  categoriesJson = await fetch('http://localhost:3000/categories')
+<<<<<<< HEAD
+      let users = await usersJson.json();
+      let ideas = await ideasJson.json();
+=======
 
       let users = await usersJson.json();
       let ideas = await ideasJson.json();
       // let categories = await categoriesJson.json();
+>>>>>>> c6481a49551d9ef3a1071f84cdb3ca935948a0ea
 
       this.setState({
         ideas,
@@ -34,7 +44,7 @@ class ProfilePage extends Component  {
       })
     }
     //these functions are for callapsing the idea card with all the data in it
-    
+
   render(){
     return(
       <div>
