@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Checkbox, Form, Input, Radio, Select, TextArea, Image } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Input, Radio, Select, TextArea, Image, Segment } from 'semantic-ui-react'
 
 class ModalEdit extends Component {
 
@@ -59,6 +59,7 @@ class ModalEdit extends Component {
     // const { value,  } = this.state
     console.log("this is idea from modal edit", this.props.idea);
     return (
+      <Segment style={{width:1000}}>
       <Form >
         {/* // looop through and output an image */}
         <Image
@@ -80,29 +81,33 @@ class ModalEdit extends Component {
           className="about"
           control={TextArea}
           label='About your idea'
-          placeholder='Tell us more about you...'
+          placeholder='Tell us more about your idea ...'
           onChange={this.updateAbout}
           // defaultValue={this.props.idea.description}
         />
         <Form.Field
+          style={{marginTop:25}}
           control={Checkbox}
           label='I agree to the Terms and Conditions'
 
         />
         <Input
+          style={{marginTop:25}}
           type="file"
           onChange={this.fileSelectHandler}
           >
 
         </Input>
         <Form.Field
+          style={{marginTop:25, marginBottom:10, color:'grey'}}
           control={Button}
           onClick={this.fileUploadHandler}
+          href='/profile'
           >
-          Submit
-          <Button />
+          Submit<Button />
         </Form.Field>
       </Form>
+      </Segment>
     )
   }
 }

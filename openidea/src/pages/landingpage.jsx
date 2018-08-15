@@ -5,6 +5,7 @@ import Navbar from '../component/navbar'
 import ImageExampleFluid from '../component/image'
 import IdeaCards from '../component/ideaCards.js'
 import logo from '../logo.svg';
+import landingpageImage from '../landingpage1.png'
 
 
 class landingpage extends Component  {
@@ -32,7 +33,8 @@ class landingpage extends Component  {
     return(
 
       <div>
-        <ImageExampleFluid />
+        <ImageExampleFluid
+        landingpageImage ={landingpageImage}/>
         <Navbar />
         <IdeaCards
         ideas={this.state.ideas} />

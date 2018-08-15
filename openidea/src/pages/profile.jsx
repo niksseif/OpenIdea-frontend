@@ -19,10 +19,10 @@ class ProfilePage extends Component  {
     getDataFromAPI = async () => {
       // fetch messagesJson
       const usersJson = await fetch('http://localhost:3000/users')
-      console.log(usersJson,"<<<after users fetch");
       const ideasJson = await fetch('http://localhost:3000/ideas')
       //add the categories api to the fron end
       // const  categoriesJson = await fetch('http://localhost:3000/categories')
+
 
       let users = await usersJson.json();
       let ideas = await ideasJson.json();
@@ -34,7 +34,7 @@ class ProfilePage extends Component  {
       })
     }
     //these functions are for callapsing the idea card with all the data in it
-    
+
   render(){
     return(
       <div>
