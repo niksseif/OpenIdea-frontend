@@ -11,7 +11,7 @@ const imageStyle = {
 const headerStyle={
   fontWeight: 'bold',
   fontcolor:'black',
-  fontSize:'30px'
+  fontSize:'40px'
 }
 
 const top = {

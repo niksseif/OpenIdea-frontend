@@ -40,8 +40,6 @@ class signupForm extends Component  {
   //here you need to add post to your route
   render(){
     //posting to the api
-
-
     return(
       <div className="container">
         <br></br>
