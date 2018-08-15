@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Divider, Form, Label, Checkbox, Button } from 'semantic-ui-react'
+import { Divider, Form, Checkbox, Button, Segment } from 'semantic-ui-react'
 
 class LabelExamplePointing extends Component {
   render(){
-    console.log(this.props, 'this props')
-    const { name, email, image_url, password,} = this.props
-        // console.log(this.props,"<<<<this.props");
+
+    const { name, email, image_url, password, validateForm} = this.props
+
+
+
       const updateName = (e) => {
          e.preventDefault()
         this.props.updateFormState("name",e.target.value)
@@ -25,75 +27,61 @@ class LabelExamplePointing extends Component {
       }
 
     return(
-
+      <Segment style={{ backgroundColor:'lightgrey',marginTop:100}}>
       <Form>
-        <Form.Field inline>
+        <Form.Field >
             <Divider />
-
-            <br>
-            </br>
-            <br>
-            </br>
-            <br>
-            </br>
           <input
             type='text'
             placeholder='name'
             className="name"
-            // value={name}
             onChange={updateName}
           />
-          <Label basic color='red' pointing='left'>
-            Enter your name
-          </Label>
+
         </Form.Field>
 
-        <Form.Field inline>
+        <Form.Field >
           <input
             type='text'
             placeholder='email'
             className="email"
+            pattern='^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$'
             onChange={updateEmail}
           />
-          <Label basic color='red' pointing='left'>
-            Enter your email
-          </Label>
+
         </Form.Field>
-        <Form.Field inline>
+        <Form.Field >
           <input
             type='text'
             placeholder='image_url'
             className="image_url"
             onChange={updateImage}
           />
-          <Label basic color='red' pointing='left'>
-            Enter your image_url
-          </Label>
+
         </Form.Field>
-        <Form.Field inline>
+        <Form.Field >
           <input
             type='text'
             placeholder='Password'
             className="password"
             onChange={updatePassword}
           />
-          <Label basic color='red' pointing='left'>
-            Enter your password
-          </Label>
-        </Form.Field>
-        <Form.Field>
-          <Checkbox label='I agree to the Terms and Conditions' />
-        </Form.Field>
-        <Button
-          href='#'
-          type='submit'
-          onClick={this.props.sendData}
 
-        >
-          Submit
-        </Button>
+        </Form.Field>
+          <Form.Field>
+            <Checkbox label='I agree to the Terms and Conditions' />
+          </Form.Field>
+          <Button
+            style={{color:'orange'}}
+            href='/profile'
+            type='submit'
+            onClick={this.props.sendData}
+          >
+            <a href='/profile'>Submit</a>
+          </Button>
 
       </Form>
+    </Segment>
     )
   }
 }

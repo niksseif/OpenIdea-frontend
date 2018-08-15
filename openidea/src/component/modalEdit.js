@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Checkbox, Form, Input, Radio, Select, TextArea, Image } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Input, Radio, Select, TextArea, Image,Segment } from 'semantic-ui-react'
 
 class ModalEdit extends Component {
 
@@ -59,8 +59,8 @@ class ModalEdit extends Component {
     // const { value,  } = this.state
     console.log("this is idea from modal edit", this.props.idea);
     return (
-      <Form >
-        {/* // looop through and output an image */}
+      <Segment style={{ backgroundColor:'lightgrey',marginTop:100}}>
+      <Form>
         <Image
           type="file"
           src={this.props.idea.image_url}
@@ -68,41 +68,18 @@ class ModalEdit extends Component {
           wrapped
         />
         <Form.Field
-          className="image_url"
           control={TextArea}
-          label='image_url'
-          placeholder='Upload your image'
-          onChange={this.updateAbout}
-          // defaultValue={this.props.idea.description}
-        />
-
-        <Form.Field
-          className="about"
-          control={TextArea}
-          label='About your idea'
-          placeholder='Tell us more about you...'
-          onChange={this.updateAbout}
-          // defaultValue={this.props.idea.description}
-        />
+          label='About'
+          placeholder='Tell us more about you...' />
         <Form.Field
           control={Checkbox}
-          label='I agree to the Terms and Conditions'
-
-        />
-        <Input
-          type="file"
-          onChange={this.fileSelectHandler}
-          >
-
-        </Input>
+          label='I agree to the Terms and Conditions' />
         <Form.Field
-          control={Button}
-          onClick={this.fileUploadHandler}
-          >
+          control={Button}>
           Submit
-          <Button />
         </Form.Field>
       </Form>
+    </Segment>
     )
   }
 }
