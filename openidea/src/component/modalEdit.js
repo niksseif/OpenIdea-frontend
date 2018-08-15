@@ -99,9 +99,10 @@ class ModalEdit extends Component {
 
         </Input>
         <Form.Field
-          style={{marginTop:25, marginBottom:10, color:'orange',}}
+          style={{marginTop:25, marginBottom:10, color:'grey'}}
           control={Button}
           onClick={this.fileUploadHandler}
+          href='/profile'
           >
           Submit<Button />
         </Form.Field>
