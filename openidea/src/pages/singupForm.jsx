@@ -9,33 +9,29 @@ class signupForm extends Component  {
           email:"",
           image_url:"",
           password:"",
-          error: null,
-          formErrors: {email: '', password: ''},
-          emailValid: false,
-          passwordValid: false,
-          formValid: false
+          error: null
       };
-//validating form
-
-
 //update form setState to assign the states to its values
-  updateFormState = (key, value) =>{
-    console.log(key, value, 'name and value')
-    this.setState({
-      [key]: value
+updateFormState = (key, value) =>{
+  console.log(key, value, 'name and value')
+  this.setState({
+    [key]: value
+  })
+}
+sendData = async () => {
+  console.log("User form state :", this.state )
+  const response = await fetch('http://localhost:3000/users', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify( this.state )
     })
-  }
-  sendData = async () => {
-    console.log("User form state :", this.state )
-    const response = await fetch('http://localhost:3000/users', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify( this.state )
-      })
-  }
+
+  console.log(response,"<<<<RESPONSE");
+
+}
 
   //here you need to add post to your route
   render(){
@@ -51,7 +47,6 @@ class signupForm extends Component  {
       password={this.state.password}
       updateFormState={this.updateFormState}
       sendData={this.sendData}
-      validateForm={this.validateForm}
     />
     </div>
     )
