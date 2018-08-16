@@ -1,19 +1,17 @@
 import React from 'react'
 import { Button, Checkbox, Form, Segment } from 'semantic-ui-react'
 
-const FormExampleForm = () => (
+const FormExampleForm = (props) => (
+
   <Segment style={{ backgroundColor:'#FF8030',marginTop:100}}>
-  <Form style={{ marginTop:50}}>
+  <Form style={{ marginTop:50}} onSubmit={props.handleLogin}>
     <Form.Field>
-      <label>First Name</label>
-      <input placeholder='First Name' style={{ width:450}} />
+      <label>Email</label>
+      <input placeholder='Email' style={{ width:450}} onChange={props.updateEmail}/>
     </Form.Field>
     <Form.Field>
-      <label>Last Name</label>
-      <input placeholder='Last Name'style={{ width:450}} />
-    </Form.Field>
-    <Form.Field>
-      <Checkbox label='I agree to the Terms and Conditions' />
+      <label>Password</label>
+      <input placeholder='Password'style={{ width:450}} onChange={props.updatePassword}/>
     </Form.Field>
     <Button type='submit'>Submit</Button>
   </Form>

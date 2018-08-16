@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProfileNav from '../component/profileNav.js'
 
 import CategoryCards from '../component/categoryCards.js'
-
+import { getHeaders } from '../services/services'
 
 
 class ProfilePage extends Component  {
@@ -18,8 +18,14 @@ class ProfilePage extends Component  {
   // loading messages from the server
     getDataFromAPI = async () => {
       // fetch messagesJson
-      const usersJson = await fetch('http://localhost:3000/users',)
-      const ideasJson = await fetch('http://localhost:3000/ideas')
+      const usersJson = await fetch('http://localhost:3000/users',{
+        method:'GET',
+        headers: getHeaders(),
+      })
+      const ideasJson = await fetch(`http://localhost:3000/ideas/`,{
+        method:'GET',
+        headers: getHeaders(),
+      })
       //add the categories api to the fron end
       // const  categoriesJson = await fetch('http://localhost:3000/categories')
 
@@ -40,10 +46,10 @@ class ProfilePage extends Component  {
       <div>
           {/*  This will be the logged in user getting passed in to the Profile */}
         <ProfileNav
-          user ={this.state.users === undefined ? null : this.state.users[0] }
+          user ={this.state.users === undefined ? null : this.state.users }
          />
         <CategoryCards
-          user ={this.state.users === undefined ? null : this.state.users[0] }
+          user ={this.state.users === undefined ? null : this.state.users }
           ideas={this.state.ideas}
 
          />

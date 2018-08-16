@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SingupFormComponent from '../component/signupFormComponent.js'
 import { Segment } from 'semantic-ui-react'
-
+import { getHeaders } from '../services/services'
 class signupForm extends Component  {
 
   state = {
@@ -22,10 +22,7 @@ sendData = async () => {
   console.log("User form state :", this.state )
   const response = await fetch('http://localhost:3000/users', {
     method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    },
+    headers: getHeaders(),
     body: JSON.stringify( this.state )
     })
 
