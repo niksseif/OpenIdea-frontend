@@ -18,7 +18,7 @@ class ProfilePage extends Component  {
   // loading messages from the server
     getDataFromAPI = async () => {
       // fetch messagesJson
-      const usersJson = await fetch('http://localhost:3000/users')
+      const usersJson = await fetch('http://localhost:3000/users',)
       const ideasJson = await fetch('http://localhost:3000/ideas')
       //add the categories api to the fron end
       // const  categoriesJson = await fetch('http://localhost:3000/categories')
