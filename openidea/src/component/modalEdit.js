@@ -43,7 +43,7 @@ class ModalEdit extends Component {
 
 //this is the PUT
   fileUploadHandler = async () => {
-      console.log("User form state :", this.state )
+      // console.log("User form state :", this.state )
       const response = await fetch(`http://localhost:3000/ideas/${this.props.idea.id}`, {
         method: 'PUT',
         headers: {
@@ -52,7 +52,7 @@ class ModalEdit extends Component {
         },
         body: JSON.stringify( this.state )
         })
-      console.log(response,"<<<<RESPONSE");
+      // console.log(response,"<<<<RESPONSE");
   }
 
   render() {

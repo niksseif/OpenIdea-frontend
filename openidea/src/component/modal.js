@@ -17,7 +17,7 @@ class ModalCard extends Component{
 
   //if the edit state is false just show modal
   render(){
-    console.log(this.props.idea,"<<<<<idea from modal");
+    // console.log(this.props.idea,"<<<<<idea from modal");
     if(!this.state.edit) {
       // console.log("idea from if statement",this.props.idea);
           return (

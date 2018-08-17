@@ -5,8 +5,8 @@ export const getHeaders = () => {
   const token = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')).token : '';
   return  {
     'Content-Type': 'application/json',
-    'Acccepts': 'application/json',
-    'Authorization': `Bearer ${token}`
+    Acccepts: 'application/json',
+    Authorization: `Bearer ${token}`
   }
 }
 
@@ -17,10 +17,11 @@ export const signup = async (data) => {
   console.log('log before signup post', data);
   const response = await fetch('http://localhost:3000/users', {
     method: 'POST',
-    headers: {
+    headers:
+    {
             "Content-Type": "application/json; charset=utf-8",
             'Acccepts': 'application/json',
-            // "Content-Type": "application/x-www-form-urlencoded",
+
         },
     body: JSON.stringify( data )
     })
@@ -37,26 +38,44 @@ export const signup = async (data) => {
 
 
 }
-//handle login
-export const handleLogin = async (data) => {
+  //handle login
 
-  try{
-  console.log('hitting the handlelogin now from services');
-    let response = await fetch('http://localhost:3000/login', {
-      method: "POST",
-      headers: {
-              "Content-Type": "application/json; charset=utf-8",
-              'Acccepts': 'application/json',
-              // "Content-Type": "application/x-www-form-urlencoded",
-          },
-      body: JSON.stringify(this.state),
-    })
-    console.log(response);
-      if (response.status === 200) {
-        let parsedResponse = await response.json()
-        localStorage.getItem("currentToken", parsedResponse.token)
+  export const handleLogin = async (data) => {
+    // console.log(localStorage.getItem('token'),"<<<this is local storage");
+    const token = JSON.parse(localStorage.getItem('token')) ? JSON.parse(localStorage.getItem('token')) : '';
+    try{
+    console.log('hitting the handlelogin now from services before data post',data);
+      let response = await fetch('http://localhost:3000/login', {
+        method: "POST",
+        headers:{
+                "Content-Type": "application/json; charset=utf-8",
+                'Acccepts': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        body: JSON.stringify(data),
+      })
+      console.log(response,'<<this is the response back from server');
+        if (response.status === 200) {
+          let parsedResponse = await response.json()
+          console.log(parsedResponse,"<<<<parsed response");
+          console.log(parsedResponse.token,"<<<<current token");
+          console.log(parsedResponse.user.id,"<<<<user id");
+          localStorage.setItem("currentToken", parsedResponse.token)
+          localStorage.setItem('currentUser.id',parsedResponse.user.id)
+          return parsedResponse
+        }
+    } catch(err){
+      console.log('error from services');
       }
-  } catch(err){
-    console.log('error from services');
     }
-  }
+
+
+    export const isLoggedIn = () => {
+      console.log(localStorage.getItem("currentToken"),"<<<<local storage");
+      if (localStorage.getItem("currentToken")) {
+        return true;
+      } else {
+        return false;
+      }
+
+    }

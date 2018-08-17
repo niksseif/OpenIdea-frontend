@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Login from '../component/login.js'
-import { getHeaders, handleLogin } from '../services/services'
+import {  handleLogin } from '../services/services'
 
 
 class LoginPage extends Component  {
@@ -18,30 +18,22 @@ class LoginPage extends Component  {
 
     handleSubmit = (e) => {
       e.preventDefault()
-      console.log("you are hiting the fetch function on the signup form page");
+      console.log("you are hiting the fetch function on the login form page");
       const { email, password } = this.state
+      console.log(this.state,"<<<this is the state before handle the login");
       handleLogin( { email, password } )
-        .then((data) => {
-
-        console.log('response data coming backkkkk:', data)
-          // if (data.result === 'ok'){
-          //   window.location = '/profile'
-          // }
-        })
-        .then(this.setState({
-          email: '',
-          password: ''
-      }))
+      .then(() => this.props.history.push('/profile'))
     }
+
 
   render(){
 
     return(
       <Login
-        handleLogin={this.handleLogin}
-        updateEmail={this.updateEmail}
-        updatePassword={this.updatePassword}
-        handleLogin={this.handleSubmit}
+        email={this.state.email}
+        password={this.state.password}
+        handleSubmit={this.handleSubmit}
+        handleChange={this.handleChange}
       />
     )
   }

@@ -11,13 +11,7 @@ class signupForm extends Component  {
           password:'',
           error: null
       };
-//update form setState to assign the states to its values
-// updateFormState = (key, value,e) =>{
-//
-//   this.setState({
-//     [key]: value
-//   })
-// }
+
 handleChange = (name, value) => {
     this.setState({
       [name]: value
