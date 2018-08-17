@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from '../component/login.js'
-import { getHeaders } from '../services/services'
+import { getHeaders, handleLogin } from '../services/services'
+
 
 class LoginPage extends Component  {
   state = {
@@ -8,33 +9,40 @@ class LoginPage extends Component  {
     password: ""
   }
 
-  handleLogin = async (formData) => {
-    let response = await fetch(`http://localhost:3000/login`, {
-      method: "POST",
-      body: JSON.stringify(this.state),
-      headers: getHeaders(),
-    })
-    if (response.status === 200) {
-      let parsedResponse = await response.json()
-      localStorage.setItem("currentToken", parsedResponse.token)
-      this.props.setLoginState(parsedResponse.token)
-    } else {
-      alert("Unauthorized, handle it later")
+
+  handleChange = (name, value) => {
+      this.setState({
+        [name]: value
+      })
     }
-  }
 
-  updateEmail = (event) => {
-    this.setState({email: event.target.value})
-  }
+    handleSubmit = (e) => {
+      e.preventDefault()
+      console.log("you are hiting the fetch function on the signup form page");
+      const { email, password } = this.state
+      handleLogin( { email, password } )
+        .then((data) => {
 
-  updatePassword = (event) => {
-    this.setState({password: event.target.value})
-  }
+        console.log('response data coming backkkkk:', data)
+          // if (data.result === 'ok'){
+          //   window.location = '/profile'
+          // }
+        })
+        .then(this.setState({
+          email: '',
+          password: ''
+      }))
+    }
 
   render(){
 
     return(
-      <Login handleLogin={this.handleLogin} updateEmail={this.updateEmail} updatePassword={this.updatePassword}/>
+      <Login
+        handleLogin={this.handleLogin}
+        updateEmail={this.updateEmail}
+        updatePassword={this.updatePassword}
+        handleLogin={this.handleSubmit}
+      />
     )
   }
 }
