@@ -21,7 +21,7 @@ class CategoryCards extends Component  {
     }
 
   render(){
-    const { users, ideas, categories }= this.props;
+    const { users, ideas, categories,  }= this.props;
     return(
       <Card.Group itemsPerRow={5} centered  >
         {/* //mapping through the ideas to creat the cards for the landing page  */}
@@ -38,6 +38,7 @@ class CategoryCards extends Component  {
              showDescription={this.state.activeIndex === idx }
              categoriesTitle={categories.title}
              users={users}
+             
 
            />
         ))}

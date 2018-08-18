@@ -23,6 +23,7 @@ class LoginPage extends Component  {
       console.log(this.state,"<<<this is the state before handle the login");
       handleLogin( { email, password } )
       .then(() => this.props.history.push('/profile'))
+      // .catch((err) => 'You are not allowed')
     }
 
 

@@ -2,7 +2,7 @@ let localhost = process.env.LOCAL_HOST
 // console.log(localhost);
 
 export const getHeaders = () => {
-  const token = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')).token : '';
+  const token = JSON.parse(localStorage.getItem('token')) ? JSON.parse(localStorage.getItem('token')) : '';
   return  {
     'Content-Type': 'application/json',
     Acccepts: 'application/json',
@@ -41,8 +41,8 @@ export const signup = async (data) => {
   //handle login
 
   export const handleLogin = async (data) => {
-    // console.log(localStorage.getItem('token'),"<<<this is local storage");
-    const token = JSON.parse(localStorage.getItem('token')) ? JSON.parse(localStorage.getItem('token')) : '';
+    console.log(localStorage.getItem('token'),"<<<this is local storage");
+    const token = JSON.parse(localStorage.getItem('currentToken')) ? JSON.parse(localStorage.getItem('currentToken')) : '';
     try{
     console.log('hitting the handlelogin now from services before data post',data);
       let response = await fetch('http://localhost:3000/login', {
@@ -78,4 +78,8 @@ export const signup = async (data) => {
         return false;
       }
 
+    }
+
+    export const logout = () => {
+      window.localStorage.removeItem('currentToken','currentUser.id' )
     }

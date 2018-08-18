@@ -20,21 +20,26 @@ class ProfilePage extends Component  {
   //remove their token
   componentDidMount = async () => {
     if (!isLoggedIn()){
-      window.location = '/'
+      // window.location = '/'
+      // window.localStorage.removeItem('currentToken')
+      // window.localStorage.removeItem('currentUser.id')
     }
     await this.getDataFromAPI()
-    // window.localStorage.removeItem('currentToken')
   }
 
   // loading messages from the server
     getDataFromAPI = async () => {
-      console.log(currentUser,"<<<<current uzzzzzeeeer");
+      // console.log(currentUser,"<<<<current uzzzzzeeeer");
       // fetch messagesJson
       const usersJson = await fetch('http://localhost:3000/users',{
         method:'GET',
         headers: getHeaders(),
       })
-      const ideasJson = await fetch(`http://localhost:3000/ideas/${currentUser}`,{
+      const ideasJson = await fetch(`http://localhost:3000/ideas`,{
+        method:'GET',
+        headers: getHeaders(),
+      })
+      const specideasJson = await fetch(`http://localhost:3000/ideas/${currentUser}`,{
         method:'GET',
         headers: getHeaders(),
       })
@@ -44,9 +49,10 @@ class ProfilePage extends Component  {
 
       let users = await usersJson.json();
       let ideas = await ideasJson.json();
-      console.log(users[0].id,"<<<users.id from profile page");
-      console.log(ideas,"<<<this is what you get from ideas");
-      console.log(localStorage,"<<<localstorage from profile");
+      let specideas = await specideasJson.json();
+
+      // console.log(ideas,"<<<this is what you get from ideas");
+      // console.log(localStorage,"<<<localstorage from profile");
       // console.log(localStorageID,"<<<<");
       // console.log(ideas.);
 
@@ -67,6 +73,7 @@ class ProfilePage extends Component  {
         <CategoryCards
           user ={this.state.users === undefined ? null : this.state.users[`${currentUser}`] }
           ideas={this.state.ideas}
+          genIdeas={this.state.genIdeas}
 
          />
     </div>

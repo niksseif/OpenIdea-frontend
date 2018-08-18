@@ -18,7 +18,7 @@ class CategoryCard extends Component {
     //this is a function to check if the model is clicked
     const onSetModalTrue =(e)=>{
       e.preventDefault()
-      // console.log('on Modal true')
+      console.log('on Modal true')
       this.setState({modal: true})
 
     }
@@ -28,7 +28,7 @@ class CategoryCard extends Component {
     const {activeIndex} = this.state
     const { idea, users, categories, setIndex } = this.props
 
-    // console.log(idea, "idea from category card");
+    console.log(idea, "idea from category card");
     return(
       <div>
         <Card >
