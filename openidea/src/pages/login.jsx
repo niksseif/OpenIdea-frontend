@@ -31,6 +31,7 @@ class LoginPage extends Component  {
 
     return(
       <Login
+        style={{width:1300,marginTop:100}}
         email={this.state.email}
         password={this.state.password}
         handleSubmit={this.handleSubmit}

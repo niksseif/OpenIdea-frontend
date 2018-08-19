@@ -28,8 +28,8 @@ export const signup = async (data) => {
     let res = await response.json()
       console.log("res in the try", res);
       // console.log('token', token);
-      //window.sessionStorage.setItem('token', token)
       localStorage.setItem('token', JSON.stringify(res.token))
+      // localStorage.setItem('currentUser.id',JSON.stringify(res.user.id))
       return res
       }
       catch(err) {
@@ -42,7 +42,7 @@ export const signup = async (data) => {
 
   export const handleLogin = async (data) => {
     console.log(localStorage.getItem('token'),"<<<this is local storage");
-    const token = JSON.parse(localStorage.getItem('currentToken')) ? JSON.parse(localStorage.getItem('currentToken')) : '';
+    const token = JSON.parse(localStorage.getItem('token')) ? JSON.parse(localStorage.getItem('token')) : '';
     try{
     console.log('hitting the handlelogin now from services before data post',data);
       let response = await fetch('http://localhost:3000/login', {

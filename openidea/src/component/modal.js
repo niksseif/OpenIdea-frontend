@@ -21,7 +21,10 @@ class ModalCard extends Component{
     if(!this.state.edit) {
       // console.log("idea from if statement",this.props.idea);
           return (
-            <Modal trigger={<Button>check idea</Button>}>
+            <Modal
+              trigger={<Button>check idea</Button>}
+              style={{marginBottom:10}}
+              >
             <Modal.Header>{this.props.idea.title}</Modal.Header>
             <Modal.Content image scrolling>
               <Image size='medium' src={this.props.idea.image_url} wrapped />

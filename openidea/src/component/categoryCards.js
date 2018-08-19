@@ -23,7 +23,7 @@ class CategoryCards extends Component  {
   render(){
     const { users, ideas, categories,  }= this.props;
     return(
-      <Card.Group itemsPerRow={5} centered  >
+      <Card.Group itemsPerRow={4} style={{marginTop:5, marginLeft:10,marginRight:10}} >
         {/* //mapping through the ideas to creat the cards for the landing page  */}
         {ideas.map((idea,idx,categories,users ) => (
           // the key is the id of the idea to not get the child error;
@@ -38,7 +38,7 @@ class CategoryCards extends Component  {
              showDescription={this.state.activeIndex === idx }
              categoriesTitle={categories.title}
              users={users}
-             
+
 
            />
         ))}

@@ -24,7 +24,7 @@ handleChange = (name, value) => {
     const { name, email, image_url, password } = this.state
     signup( { name, email, image_url, password } )
       .then((data) => {
-      // console.log('response data coming backkkkk:', data)
+      console.log('response data coming backkkkk:', data)
         if (data.result === 'ok'){
           window.location = '/profile'
         }

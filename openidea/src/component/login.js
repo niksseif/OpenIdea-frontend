@@ -19,7 +19,7 @@ class FormExampleForm extends Component {
       }
     return(
       <Segment
-        style={{ backgroundColor:'#FF8030',marginTop:100}}>
+        style={{ backgroundColor:'lightgrey', marginLeft:100,marginRight:100, marginTop:100}}>
         <Form
           style={{ marginTop:50}}
           >

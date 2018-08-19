@@ -52,9 +52,10 @@ class signupFormComponent extends Component {
 
                 <Form.Field >
                   <input
-                    type='text'
+                    type='email'
                     placeholder='email'
                     className="email"
+                    pattern='^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$'
                     onChange={ updateEmail }
                     value={this.props.email}
                     required
@@ -74,10 +75,11 @@ class signupFormComponent extends Component {
                   </Form.Field>
                   <Form.Field >
                       <input
-                        type='text'
+                        type='password'
                         placeholder='Password'
                         className="password"
-                        onChange={  updatePassword }
+                        minLength='4'
+                        onChange={updatePassword }
                         value={this.props.password}
                         required
                       />
@@ -89,7 +91,6 @@ class signupFormComponent extends Component {
                   <Button
                     fluid size='large'
                     style={{color:'orange'}}
-                    // href='/profile'
                     type='submit'
                     onClick={handleSubmit}
 

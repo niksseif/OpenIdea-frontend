@@ -31,7 +31,7 @@ class CategoryCard extends Component {
     console.log(idea, "idea from category card");
     return(
       <div>
-        <Card >
+        <Card style={{marginBottom:5, margin:10}}>
           <Image src={idea.image_url}/>
            <Card.Content >
               <Card.Header>{idea.title}</Card.Header>
@@ -46,6 +46,7 @@ class CategoryCard extends Component {
                   users={this.users}
                   categories={this.categories}
                   key={idea.id}
+                  style={{marginBottom:10}}
                 />
 
               </Accordion>

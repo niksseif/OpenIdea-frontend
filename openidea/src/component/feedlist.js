@@ -19,16 +19,18 @@ class FeedList extends Component  {
     }
 
   render(){
-    const { usersIdeas } = this.props;
-    console.log(usersIdeas,"<<<ideas from feedlist");
+    const { usersIdeas,users } = this.props;
+    console.log(users,"<<<users from feedlist");
+
     return(
       <div>
+        {usersIdeas.map ((usersIdea, user) => (
 
-        {usersIdeas.map ((usersIdea) => (
-        
           <Feed
             usersIdea = {usersIdea}
             key={usersIdea.id}
+            name={usersIdea.name}
+            usersImage={users.image_url}
           >
           </Feed>
         ))}
