@@ -5,7 +5,10 @@ import ImageExampleFluid from './image'
 export default class MenuExampleStackable extends Component {
   state = {}
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => {
+    this.setState({ activeItem: name })
+    window.location ='/login'
+  }
 
   render() {
     const { activeItem } = this.state

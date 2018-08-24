@@ -43,7 +43,7 @@ class ModalEdit extends Component {
 
 //this is the PUT
   fileUploadHandler = async () => {
-      console.log("User form state :", this.state )
+      // console.log("User form state :", this.state )
       const response = await fetch(`http://localhost:3000/ideas/${this.props.idea.id}`, {
         method: 'PUT',
         headers: {
@@ -52,7 +52,7 @@ class ModalEdit extends Component {
         },
         body: JSON.stringify( this.state )
         })
-      console.log(response,"<<<<RESPONSE");
+      // console.log(response,"<<<<RESPONSE");
   }
 
   render() {
@@ -86,7 +86,7 @@ class ModalEdit extends Component {
           // defaultValue={this.props.idea.description}
         />
         <Form.Field
-          style={{marginTop:25}}
+          // style={{marginTop:25}}
           control={Checkbox}
           label='I agree to the Terms and Conditions'
 
@@ -99,12 +99,12 @@ class ModalEdit extends Component {
 
         </Input>
         <Form.Field
-          style={{marginTop:25, marginBottom:10, color:'grey'}}
+          style={{marginLeft:400, marginBottom:10, color:'grey'}}
           control={Button}
           onClick={this.fileUploadHandler}
           href='/profile'
           >
-          Submit<Button />
+        Submit
         </Form.Field>
       </Form>
       </Segment>
