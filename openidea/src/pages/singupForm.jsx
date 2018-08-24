@@ -1,54 +1,56 @@
 import React, { Component } from 'react';
 import SingupFormComponent from '../component/signupFormComponent.js'
 import { Segment } from 'semantic-ui-react'
+import { getHeaders, signup } from '../services/services'
 
 class signupForm extends Component  {
-
   state = {
-          name:"",
-          email:"",
-          image_url:"",
-          password:"",
+          name:'',
+          email:'',
+          image_url:'',
+          password:'',
           error: null
       };
-//update form setState to assign the states to its values
-updateFormState = (key, value) =>{
-  console.log(key, value, 'name and value')
-  this.setState({
-    [key]: value
-  })
-}
-sendData = async () => {
-  console.log("User form state :", this.state )
-  const response = await fetch('http://localhost:3000/users', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify( this.state )
+
+handleChange = (name, value) => {
+    this.setState({
+      [name]: value
     })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("you are hiting the fetch function on the signup form page");
+    const { name, email, image_url, password } = this.state
+    signup( { name, email, image_url, password } )
+      .then((data) => {
+      console.log('response data coming backkkkk:', data)
+        if (data.result === 'ok'){
+          window.location = '/profile'
+        }
+      })
+      .then(this.setState({
+        name: '',
+        email: '',
+        image_url: '',
+        password: ''
+    }))
+  }
 
 
-
-}
-
-  //here you need to add post to your route
   render(){
-    //posting to the api
     return(
 
       <Segment style={{width:1300,marginTop:100}}>
-
-      <SingupFormComponent
-      response={this.response}
-      name={this.state.name}
-      email={this.state.email}
-      image_url={this.state.image_url}
-      password={this.state.password}
-      updateFormState={this.updateFormState}
-      sendData={this.sendData}
-    />
+        <SingupFormComponent
+        // response={this.response}
+        name={this.state.name}
+        email={this.state.email}
+        image_url={this.state.image_url}
+        password={this.state.password}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+      />
   </Segment>
     )
   }

@@ -8,7 +8,14 @@ import ImageExampleFluid from './image'
 export default class Profile extends Component {
   state = {}
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => {
+    this.setState({ activeItem: name })
+    window.location ='/user/ideas'
+  }
+  handleItemClickHome = (e, { name }) => {
+    this.setState({ activeItem: name })
+    window.location ='/'
+  }
 
   render() {
 
@@ -23,19 +30,20 @@ export default class Profile extends Component {
         </Menu.Item>
 
         <Menu.Item
-          name='features'
-          active={activeItem === 'features'}
-          onClick={this.handleItemClick}
+          name='main'
+          active={activeItem === 'main'}
+          onClick={this.handleItemClickHome}
         >
-          Features
+          Main
         </Menu.Item>
 
         <Menu.Item
           name='testimonials'
           active={activeItem === 'testimonials'}
           onClick={this.handleItemClick}
+
         >
-          Testimonials
+          Public ideas
         </Menu.Item>
 
         <Menu.Item name='sign-in' active={activeItem === 'sign-in'} onClick={this.handleItemClick}>

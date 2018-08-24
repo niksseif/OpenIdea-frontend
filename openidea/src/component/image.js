@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image } from 'semantic-ui-react'
-import landingpageImage from '../landingpage1.png'
+import landingpageImage from '../landingPage2.png'
 
 
 const imageStyle = {

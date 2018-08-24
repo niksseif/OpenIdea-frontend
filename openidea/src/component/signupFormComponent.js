@@ -1,32 +1,40 @@
 import React, { Component } from 'react';
 import { Divider, Form, Label, Checkbox, Button, Segment } from 'semantic-ui-react'
 
-class LabelExamplePointing extends Component {
-  render(){
-    console.log(this.props, 'this props')
-    const { name, email, image_url, password,} = this.props
 
+class signupFormComponent extends Component {
+  render(){
+
+    const {  handleChange, handleSubmit } = this.props
+    // const { name, email, image_url, password } = this.state
+    console.log(this.props, 'this props from signup component')
       //updateName
       const updateName = (e) => {
          e.preventDefault()
-        this.props.updateFormState("name",e.target.value)
+         let value=e.target.value
+         console.log(value);
+        this.props.handleChange("name",value)
       }
       // updateEmail
       const updateEmail = (e) => {
         e.preventDefault()
-        this.props.updateFormState("email",e.target.value)
+        let value=e.target.value
+        this.props.handleChange("email",value)
       }
       //updateImage
       const updateImage = (e) => {
-        e.preventDefault("image_url",e.target.value)
-        this.props.updateFormState("image_url",e.target.value)
+        let value=e.target.value
+        e.preventDefault()
+        this.props.handleChange("image_url",value)
 
       }
       //update password
       const updatePassword = (e) => {
-        e.preventDefault("password",e.target.value)
-        this.props.updateFormState("password",e.target.value)
+        e.preventDefault()
+        let value=e.target.value
+        this.props.handleChange("password",value)
       }
+
 
     return(
         <Segment style={{ backgroundColor:'lightgrey', marginLeft:100,marginRight:100}}>
@@ -36,17 +44,21 @@ class LabelExamplePointing extends Component {
                   <input
                     type='text'
                     placeholder='name'
-                    className="name"
-                    onChange={updateName}
+                    className='name'
+                    onChange={ updateName }
+                    value={this.props.name}
                   />
                 </Form.Field>
 
                 <Form.Field >
                   <input
-                    type='text'
+                    type='email'
                     placeholder='email'
                     className="email"
-                    onChange={updateEmail}
+                    pattern='^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$'
+                    onChange={ updateEmail }
+                    value={this.props.email}
+                    required
                   />
 
                 </Form.Field>
@@ -56,15 +68,20 @@ class LabelExamplePointing extends Component {
                       placeholder='image_url'
                       className="image_url"
                       onChange={updateImage}
+                      value={this.props.image_url}
+                      required
                     />
 
                   </Form.Field>
                   <Form.Field >
                       <input
-                        type='text'
+                        type='password'
                         placeholder='Password'
                         className="password"
-                        onChange={updatePassword}
+                        minLength='4'
+                        onChange={updatePassword }
+                        value={this.props.password}
+                        required
                       />
 
                   </Form.Field>
@@ -74,9 +91,8 @@ class LabelExamplePointing extends Component {
                   <Button
                     fluid size='large'
                     style={{color:'orange'}}
-                    href='/profile'
                     type='submit'
-                    onClick={this.props.sendData}
+                    onClick={handleSubmit}
 
                   >
                   Submit
@@ -86,4 +102,4 @@ class LabelExamplePointing extends Component {
     )
   }
 }
-export default LabelExamplePointing
+export default signupFormComponent
