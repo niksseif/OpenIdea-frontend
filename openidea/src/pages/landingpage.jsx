@@ -19,7 +19,7 @@ class landingpage extends Component  {
   // loading messages from the server
     getDataFromAPI = async () => {
   // fetch messagesJson
-      const ideasJson = await fetch('http://localhost:3000/ideas')
+      const ideasJson = await fetch('https://openidea.herokuapp.com/ideas')
       let ideas = await ideasJson.json()
 
 

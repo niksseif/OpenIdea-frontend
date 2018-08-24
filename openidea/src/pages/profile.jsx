@@ -35,17 +35,17 @@ class ProfilePage extends Component  {
     getDataFromAPI = async () => {
       // console.log(currentUser,"<<<<current uzzzzzeeeer");
       // fetch usersJson
-      const usersJson = await fetch('http://localhost:3000/users',{
+      const usersJson = await fetch('https://openidea.herokuapp.com/users',{
         method:'GET',
         headers: getHeaders(),
       })
-      const ideasJson = await fetch(`http://localhost:3000/ideas/1`,{
+      const ideasJson = await fetch(`https://openidea.herokuapp.com/ideas/1`,{
         method:'GET',
         headers: getHeaders(),
       })
 
       //this is for getting the current user ideas for the api
-      const specideasJson = await fetch(`http://localhost:3000/ideas/`,{
+      const specideasJson = await fetch(`https://openidea.herokuapp.com/ideas`,{
         method:'GET',
         headers: getHeaders(),
       })

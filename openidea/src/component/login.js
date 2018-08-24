@@ -27,6 +27,7 @@ class FormExampleForm extends Component {
             <label>Email</label>
             <input
               placeholder='Email'
+              type='email'
               style={{ width:450}}
               onChange={updateEmail}/>
           </Form.Field>
@@ -34,6 +35,7 @@ class FormExampleForm extends Component {
             <label>Password</label>
             <input
               placeholder='Password'
+              type='password'
               style={{ width:450}}
               onChange={updatePassword}/>
           </Form.Field>

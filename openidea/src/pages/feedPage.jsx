@@ -18,14 +18,14 @@ class FeedPage extends Component  {
     getDataFromAPI = async () => {
 
 // fetch 1 user public ideas
-      const usersIdeasJson = await fetch(`http://localhost:3000/users/${1}/ideas`)
+      const usersIdeasJson = await fetch(`https://openidea.herokuapp.com/users/1/ideas`)
 //fetch all the public ideas from the users
-      const ideasJson = await fetch(`http://localhost:3000/ideas/1`,{
+      const ideasJson = await fetch(`https://openidea.herokuapp.com/ideas/1`,{
         method:'GET',
         headers: getHeaders(),
       })
 //fetch users
-      const usersJson = await fetch('http://localhost:3000/users',{
+      const usersJson = await fetch('https://openidea.herokuapp.com/users',{
         method:'GET',
         headers: getHeaders(),
       })
