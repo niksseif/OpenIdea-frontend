@@ -12,17 +12,15 @@ export default class Profile extends Component {
     this.setState({ activeItem: name })
     window.location ='/user/ideas'
   }
+
   handleItemClickHome = (e, { name }) => {
     this.setState({ activeItem: name })
     window.location ='/'
   }
 
   render() {
-
     const { activeItem } = this.state
     const { user, usersIdeas } = this.props
-
-
     return (
       <Menu stackable>
         <Menu.Item>
@@ -36,12 +34,10 @@ export default class Profile extends Component {
         >
           Main
         </Menu.Item>
-
         <Menu.Item
           name='testimonials'
           active={activeItem === 'testimonials'}
           onClick={this.handleItemClick}
-
         >
           Public ideas
         </Menu.Item>
@@ -61,7 +57,6 @@ export default class Profile extends Component {
           </div>
           <div className="results"></div>
         </div>
-
         </Menu.Item>
       </Menu>
     )

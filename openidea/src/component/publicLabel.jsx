@@ -46,7 +46,7 @@ IncrementItem = () => {
             onClick={this.IncrementItem}
           >
               {this.state.clicks}
-            </Label.Detail>
+          </Label.Detail>
           <Icon name='vote' color='blue'/>
         </Label>
       </div>

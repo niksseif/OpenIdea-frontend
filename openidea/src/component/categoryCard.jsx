@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Card, Icon, Image,Accordion } from 'semantic-ui-react'
 import { Collapse, Button, CardBody } from 'reactstrap';
 import ModalCard from './modal'
-import ModalEdit from './modalEdit.js'
+import ModalEdit from './modalEdit'
 
 // import '../ideaCardStyle.css'
 
@@ -51,7 +51,7 @@ class CategoryCard extends Component {
 
               </Accordion>
         </Card>
-    </div>
+      </div>
     )
   }
 }

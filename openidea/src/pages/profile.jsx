@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ProfileNav from '../component/profileNav.js'
+import ProfileNav from '../component/profileNav'
 
-import CategoryCards from '../component/categoryCards.js'
+import CategoryCards from '../component/categoryCards'
 import { getHeaders, isLoggedIn  } from '../services/services'
 
 
@@ -77,9 +77,8 @@ class ProfilePage extends Component  {
           user ={this.state.users === undefined ? null : this.state.users[0] }
           ideas={this.state.ideas}
           genIdeas={this.state.genIdeas}
-
-         />
-    </div>
+        />
+      </div>
     )
   }
 }

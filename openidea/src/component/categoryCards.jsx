@@ -5,23 +5,19 @@ import IdeaCardForProfile from './categoryCard'
 
 
 class CategoryCards extends Component  {
-
-    state = { activeIndex: null }
+  state = { activeIndex: null }
     //seting the index of the card to ictive index to trigger the modal
     setIndex = (activeIndex) => {
-      // console.log("is this true or false", activeIndex === this.state.activeIndex);
-      // console.log("activeIndex", activeIndex, "state.activeIndex", this.state.activeIndex);
       if(this.state.activeIndex === activeIndex) {
         this.setState({activeIndex: null})
       } else {
-
         this.setState({activeIndex})
       }
-     this.setState({showDescription: 3})
-    }
-
+      this.setState({showDescription: 3})
+  }
   render(){
     const { users, ideas, categories,  }= this.props;
+
     return(
       <Card.Group itemsPerRow={4} style={{marginTop:5, marginLeft:10,marginRight:10}} >
         {/* //mapping through the ideas to creat the cards for the landing page  */}
@@ -42,7 +38,6 @@ class CategoryCards extends Component  {
 
            />
         ))}
-
       </Card.Group>
     );
   }

@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
-import ProfileNav from '../component/profileNav.js'
-import FeedList from '../component/feedlist.js'
+import ProfileNav from '../component/profileNav'
+import FeedList from '../component/feedlist'
 import { getHeaders } from '../services/services'
 
 const currentUser = localStorage.getItem("currentUser.id")
 class FeedPage extends Component  {
-  state ={
+  state = {
     usersIdeas:[],
     ideas:[],
     users:[]
   }
-  //Connect to backend to grab API
+    //Connect to backend to grab API
     componentDidMount = async () => {
       await this.getDataFromAPI()
     }
-  // loading messages from the server
-    getDataFromAPI = async () => {
 
-// fetch 1 user public ideas
+    // loading messages from the server
+    getDataFromAPI = async () => {
+      // fetch 1 user public ideas
       const usersIdeasJson = await fetch(`https://openidea.herokuapp.com/users/1/ideas`)
-//fetch all the public ideas from the users
+      //fetch all the public ideas from the users
       const ideasJson = await fetch(`https://openidea.herokuapp.com/ideas/1`,{
         method:'GET',
         headers: getHeaders(),
       })
-//fetch users
+
+      //fetch users
       const usersJson = await fetch('https://openidea.herokuapp.com/users',{
         method:'GET',
         headers: getHeaders(),
@@ -55,7 +56,7 @@ class FeedPage extends Component  {
 
 
          />
-    </div>
+      </div>
     )
   }
 }

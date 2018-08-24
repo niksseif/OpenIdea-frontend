@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Feed from './feed.js'
+import Feed from './feed'
 import { Card, Icon, Image,Grid } from 'semantic-ui-react'
 
 

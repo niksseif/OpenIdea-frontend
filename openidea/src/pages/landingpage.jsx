@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 
 import Navbar from '../component/navbar'
 import ImageExampleFluid from '../component/image'
-import IdeaCards from '../component/ideaCards.js'
+import IdeaCards from '../component/ideaCards'
 import logo from '../logo.svg';
-import landingpageImage from '../landingpage1.png'
+import landingpageImage from '../landingPage2.png'
 
 
 class landingpage extends Component  {
@@ -21,17 +21,12 @@ class landingpage extends Component  {
   // fetch messagesJson
       const ideasJson = await fetch('https://openidea.herokuapp.com/ideas')
       let ideas = await ideasJson.json()
-
-
       this.setState({
         ideas,
       })
     }
   render(){
-
-
     return(
-
       <div>
         <ImageExampleFluid
         landingpageImage ={landingpageImage}/>

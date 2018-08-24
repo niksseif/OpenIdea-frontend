@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from '../component/login.js'
+import Login from '../component/login'
 import {  handleLogin } from '../services/services'
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SingupFormComponent from '../component/signupFormComponent.js'
+import SingupFormComponent from '../component/signupFormComponent'
 import { Segment } from 'semantic-ui-react'
 import { getHeaders, signup } from '../services/services'
 
@@ -40,18 +40,17 @@ handleChange = (name, value) => {
 
   render(){
     return(
-
       <Segment style={{width:1300,marginTop:100}}>
         <SingupFormComponent
-        // response={this.response}
-        name={this.state.name}
-        email={this.state.email}
-        image_url={this.state.image_url}
-        password={this.state.password}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
-  </Segment>
+          // response={this.response}
+          name={this.state.name}
+          email={this.state.email}
+          image_url={this.state.image_url}
+          password={this.state.password}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </Segment>
     )
   }
 }
