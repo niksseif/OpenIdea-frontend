@@ -66,21 +66,21 @@ class LabelExamplePointing extends Component {
                 onChange={updatePassword}
                 />
               </Form.Field>
-              <Form.Field>
-                <Checkbox label='I agree to the Terms and Conditions' />
-              </Form.Field>
-                  <Button
-                    fluid size='large'
-                    style={{color:'orange'}}
-                    href='/profile'
-                    type='submit'
-                    onClick={this.props.sendData}
-                  >
-                  Submit
-                  </Button>
-          </Form>
-              </Segment>
+          <Form.Field>
+            <Checkbox label="I agree to the Terms and Conditions" />
+          </Form.Field>
+          <Button
+            fluid size='large'
+            style={{color:'orange'}}
+            href='/profile'
+            type='submit'
+            onClick={this.props.sendData}
+          >
+            Submit
+          </Button>
+        </Form>
+        </Segment>
     )
-  }
+
 }
 export default LabelExamplePointing
