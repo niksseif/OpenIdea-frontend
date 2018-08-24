@@ -78,7 +78,7 @@ class LabelExamplePointing extends Component {
                   >
                   Submit
                   </Button>
-              </Form>
+          </Form>
               </Segment>
     )
   }
