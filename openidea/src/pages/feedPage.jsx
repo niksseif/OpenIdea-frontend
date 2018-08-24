@@ -24,7 +24,7 @@ class FeedPage extends Component  {
         method:'GET',
         headers: getHeaders(),
       })
-
+      
       //fetch users
       const usersJson = await fetch('https://openidea.herokuapp.com/users',{
         method:'GET',
@@ -48,13 +48,10 @@ class FeedPage extends Component  {
         <ProfileNav
           user ={this.state.users === undefined ? null : this.state.users[0] }
           usersIdeas={this.usersIdeas}
-
         />
         <FeedList
           users ={this.state.users}
           usersIdeas = {this.state.usersIdeas}
-
-
          />
       </div>
     )
