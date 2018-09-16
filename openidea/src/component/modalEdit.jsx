@@ -41,7 +41,7 @@ class ModalEdit extends Component {
 
 //this is the PUT
   fileUploadHandler = async () => {
-      const response = await fetch(`http://localhost:3000/ideas/${this.props.idea.id}`, {
+      const response = await fetch(`http://localhost:5000/ideas/${this.props.idea.id}`, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',
@@ -56,7 +56,6 @@ class ModalEdit extends Component {
     return (
       <Segment style={{width:1000}}>
         <Form >
-          {/* // looop through and output an image */}
           <Image
             type="file"
             src={this.props.idea.image_url}

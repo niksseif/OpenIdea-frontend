@@ -16,7 +16,7 @@ class CategoryCard extends Component {
 
   render(){
     //this is a function to check if the model is clicked
-    const onSetModalTrue =(e)=>{
+    const onSetModalTrue = (e) => {
       e.preventDefault()
       console.log('on Modal true')
       this.setState({modal: true})
@@ -37,9 +37,8 @@ class CategoryCard extends Component {
               <Card.Header>{idea.title}</Card.Header>
                 <Card.Meta>Joined in 2018</Card.Meta>
                   <Card.Description >{idea.description}</Card.Description>
-              </Card.Content>
+            </Card.Content>
               <Accordion>
-
                 <ModalCard
                   onClick={onSetModalTrue}
                   idea={idea}
@@ -48,7 +47,6 @@ class CategoryCard extends Component {
                   key={idea.id}
                   style={{marginBottom:10}}
                 />
-
               </Accordion>
         </Card>
       </div>

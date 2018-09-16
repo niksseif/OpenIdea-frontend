@@ -10,7 +10,7 @@ export default class Profile extends Component {
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name })
-    window.location ='/user/ideas'
+    window.location ='/feeds'
   }
 
   handleItemClickHome = (e, { name }) => {
@@ -20,11 +20,11 @@ export default class Profile extends Component {
 
   render() {
     const { activeItem } = this.state
-    const { user, usersIdeas } = this.props
+    const { users } = this.props
     return (
       <Menu stackable>
         <Menu.Item>
-          <Image src={user === undefined ? null : user.image_url}  avatar />
+          <Image src={users === undefined ? null : users.image_url}  avatar />
         </Menu.Item>
 
         <Menu.Item
@@ -49,10 +49,19 @@ export default class Profile extends Component {
           Sign-Up
         </Menu.Item>
         {/* this is the search area */}
-        <Menu.Item name='search' active={activeItem === 'search'} onClick={this.handleItemClick}  >
+        <Menu.Item 
+        name='search' 
+        active={activeItem === 'search'} 
+        // onClick={this.handleItemClick}  
+        >
         <div className="ui loading search">
           <div className="ui icon input">
-            <input className="prompt" type="text" placeholder="Search..."></input>
+            <input 
+            className="prompt" 
+            type="text" 
+            placeholder="Search..."
+            >
+            </input>
               <i className="search icon"></i>
           </div>
           <div className="results"></div>

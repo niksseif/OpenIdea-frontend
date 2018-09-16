@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import ProfileNav from '../component/profileNav'
-import FeedList from '../component/feedlist'
+import FeedList from '../component/feedlist.jsx'
 import { getHeaders } from '../services/services'
 
-const currentUser = localStorage.getItem("currentUser.id")
+
 class FeedPage extends Component  {
   state = {
-    usersIdeas:[],
-    ideas:[],
+    publicIdeas:[],
     users:[]
   }
     //Connect to backend to grab API
@@ -17,44 +16,44 @@ class FeedPage extends Component  {
 
     // loading messages from the server
     getDataFromAPI = async () => {
-      // fetch 1 user public ideas
-      const usersIdeasJson = await fetch(`https://openidea.herokuapp.com/users/1/ideas`)
-      //fetch all the public ideas from the users
-      const ideasJson = await fetch(`https://openidea.herokuapp.com/ideas/1`,{
-        method:'GET',
-        headers: getHeaders(),
-      })
-      
-      //fetch users
-      const usersJson = await fetch('https://openidea.herokuapp.com/users',{
-        method:'GET',
-        headers: getHeaders(),
-      })
-      let users = await usersJson.json();
-      console.log(users,"<<<<usersfrom feed page");
-      let usersIdeas = await usersIdeasJson.json();
-      let ideas = await ideasJson.json();
+      try{
+        const publicIdeasJson = await fetch('http://localhost:5000/ideas',{
+            method:'GET',
+            headers: getHeaders(),
+          })
+        let publicIdeas = await publicIdeasJson.json(); 
 
-      this.setState({
-        usersIdeas,
-        ideas,
-        users
-      })
+        let users_id = publicIdeas.forEach((idea)=>{
+            return idea.users_id
+        })  
+
+        let publicLabel = publicIdeas.forEach((idea) => {
+          if (idea.label === 'public'){
+            this.setState({
+              publicIdeas,
+              users_id
+            })
+          }
+        })       
+       
+      } catch (err){
+        throw(err,"You don't have access to the public ideas")
+      }
     }
-
-  render(){
-    return(
-      <div>
-        <ProfileNav
-          user ={this.state.users === undefined ? null : this.state.users[0] }
-          usersIdeas={this.usersIdeas}
-        />
-        <FeedList
-          users ={this.state.users}
-          usersIdeas = {this.state.usersIdeas}
-         />
-      </div>
-    )
-  }
+    render(){
+      return(
+        <div>
+          <ProfileNav
+            user ={this.state.users_id === undefined ? null : this.state.users_id }
+            publicIdeas={this.state.publicIdeas}
+          />
+          <FeedList
+            users ={this.state.users_id}
+            publicIdeas = {this.state.publicIdeas}
+            key= {this.props.id}
+          />
+        </div>
+      )
+    }
 }
 export default FeedPage;

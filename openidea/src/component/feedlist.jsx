@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Feed from './feed'
+import Feed from './feed.jsx'
 import { Card, Icon, Image,Grid } from 'semantic-ui-react'
 
 
@@ -19,18 +19,18 @@ class FeedList extends Component  {
     }
 
   render(){
-    const { usersIdeas,users } = this.props;
-    console.log(users,"<<<users from feedlist");
+    const { publicIdeas, } = this.props;
+    
 
     return(
       <div>
-        {usersIdeas.map ((usersIdea, user) => (
+        {publicIdeas.map ((publicIdea) => (
 
           <Feed
-            usersIdea = {usersIdea}
-            key={usersIdea.id}
-            name={usersIdea.name}
-            usersImage={users.image_url}
+            publicIdea = {publicIdea}
+            key={this.props.id}
+            name={publicIdea.name}
+            userImage={publicIdea.image_url}
           >
           </Feed>
         ))}

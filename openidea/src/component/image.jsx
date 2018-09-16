@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { Image } from 'semantic-ui-react';
 import landingpageImage from '../landingPage2.png';
@@ -34,4 +35,4 @@ const ImageExampleFluid = () => (
   </div>
 );
 
-export default ImageExampleFluid
+export default ImageExampleFluid;

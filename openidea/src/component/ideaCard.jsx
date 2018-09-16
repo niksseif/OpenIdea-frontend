@@ -11,9 +11,7 @@ const IdeaCard = props => (
             <Card.Description>{props.description}</Card.Description>
       </Card.Content>
         <Card.Content extra>
-          <a
-            href="#"
-          >
+          <a>
             <Icon name="user" />
         10 Friends
           </a>
