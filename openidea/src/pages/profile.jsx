@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import ProfileNav from '../component/profileNav'
 
 import CategoryCards from '../component/categoryCards'
-import { getHeaders, isLoggedIn  } from '../services/services'
+import { getHeaders, isLoggedIn,currentUserId  } from '../services/services'
+
 
 
 //getting the current user id from the local storage
 //assigning the id to the api to fetch the ideas
 // const currentUser = localStorage.getItem("currentUser.id")
 // const localStorageID = localStorage.getItem(currentUser.id)
-// const api = `http://localhost:3000/ideas/${localStorageID}`
+// const api = `http://localhost:5000/ideas/${localStorageID}`
 
 
 class ProfilePage extends Component  {
   state = {
     users: [],
     ideas:[],
-    categories:[]
   };
 
 
@@ -24,44 +24,34 @@ class ProfilePage extends Component  {
   //remove their token
   componentDidMount = async () => {
     if (!isLoggedIn()){
-      // window.location = '/'
-      window.localStorage.removeItem('currentToken')
-      window.localStorage.removeItem('currentUser.id')
+      window.location = '/'
+      window.localStorage.removeItem('access_token')
+      window.localStorage.removeItem('refresh_token')
     }
     await this.getDataFromAPI()
   }
 
   // loading messages from the server
     getDataFromAPI = async () => {
-      // console.log(currentUser,"<<<<current uzzzzzeeeer");
       // fetch usersJson
-      const usersJson = await fetch('https://openidea.herokuapp.com/users',{
+      const usersJson = await fetch(`https://openidea-python.herokuapp.com/user/${currentUserId()}/ideas`,{
         method:'GET',
         headers: getHeaders(),
       })
-      const ideasJson = await fetch(`https://openidea.herokuapp.com/ideas/1`,{
-        method:'GET',
-        headers: getHeaders(),
-      })
-
-      //this is for getting the current user ideas for the api
-      const specideasJson = await fetch(`https://openidea.herokuapp.com/ideas`,{
-        method:'GET',
-        headers: getHeaders(),
-      })
-
-      //add the categories api to the the profile page
-      //@ future features
-      // const  categoriesJson = await fetch('http://localhost:3000/categories')
-
-
+      
+      let id = currentUserId()
       let users = await usersJson.json();
-      let ideas = await ideasJson.json();
-      let specideas = await specideasJson.json();
+      // console.log(users,"<<users")
+      // console.log(id, "<<usersId")
+
+      let ideas = users.ideas
+      // let id = users.id
+     
 
       this.setState({
-        ideas,
-        users,
+         users,
+         ideas,
+         id  
       })
     }
     //these functions are for callapsing the idea card with all the data in it
@@ -71,12 +61,12 @@ class ProfilePage extends Component  {
       <div>
           {/*  This will be the logged in user getting passed in to the Profile */}
         <ProfileNav
-          user ={this.state.users === undefined ? null : this.state.users[0] }
+          users ={this.state.users === undefined ? null : this.state.users[this.props.id] }
          />
         <CategoryCards
-          user ={this.state.users === undefined ? null : this.state.users[0] }
+          users ={this.state.users === undefined ? null : this.state.users[this.props.id] }
           ideas={this.state.ideas}
-          genIdeas={this.state.genIdeas}
+          key = {this.props.id}
         />
       </div>
     )

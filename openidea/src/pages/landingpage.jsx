@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-
 import Navbar from '../component/navbar'
 import ImageExampleFluid from '../component/image'
 import IdeaCards from '../component/ideaCards'
-import logo from '../logo.svg';
 import landingpageImage from '../landingPage2.png'
 
 
@@ -19,22 +16,34 @@ class landingpage extends Component  {
   // loading messages from the server
     getDataFromAPI = async () => {
   // fetch messagesJson
-      const ideasJson = await fetch('https://openidea.herokuapp.com/ideas')
+      const ideasJson = await fetch('https://openidea-python.herokuapp.com/ideas')
       let ideas = await ideasJson.json()
-      this.setState({
-        ideas,
+      console.log(ideas,"<<<ideazzzzz");
+
+      let label = ideas.forEach((idea) => {
+        console.log(idea.label,"<<<label")
+        if(idea.label === 'public'){
+          this.setState({
+            ideas,
+          })
+          return idea.label
+        }
       })
+      
+       
+      
     }
-  render(){
-    return(
-      <div>
-        <ImageExampleFluid
-        landingpageImage ={landingpageImage}/>
-        <Navbar />
-        <IdeaCards
-        ideas={this.state.ideas} />
-      </div>
-    )
-  }
+    
+    render(){
+      return(
+        <div>
+          <ImageExampleFluid
+          landingpageImage ={landingpageImage}/>
+          <Navbar />
+          <IdeaCards
+          ideas={this.state.ideas} />
+        </div>
+      )
+    }
 }
 export default landingpage;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
 import { Route, Switch } from 'react-router-dom'
+
+
 import Landingpage from './pages/landingpage'
 import SignupForm from './pages/singupForm'
 import Profile from './pages/profile'
@@ -27,7 +27,7 @@ class App extends Component {
         <Route exact path="/" component={Landingpage} />
         <Route exact path="/signup" component={SignupForm} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/user/ideas" component={Feed} />
+        <Route exact path="/feeds" component={Feed} />
         <Route exact path="/login" component={Login} />
       </Switch>
 

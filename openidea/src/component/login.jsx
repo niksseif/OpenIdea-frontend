@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React, { Component } from 'react';
-import { Button, Checkbox, Form, Segment } from 'semantic-ui-react';
+import { Button, Form, Segment } from 'semantic-ui-react';
+
 
 class FormExampleForm extends Component {
   render() {
@@ -19,8 +21,11 @@ class FormExampleForm extends Component {
     return (
       <Segment
         style={{
- backgroundColor: 'lightgrey', marginLeft: 100, marginRight: 100, marginTop: 100,
-}}
+          backgroundColor: 'lightgrey',
+          marginLeft: 100,
+          marginRight: 100,
+          marginTop: 100,
+        }}
       >
         <Form
           style={{ marginTop: 50 }}

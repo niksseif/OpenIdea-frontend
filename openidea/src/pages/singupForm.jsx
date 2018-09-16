@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SingupFormComponent from '../component/signupFormComponent'
 import { Segment } from 'semantic-ui-react'
 import { getHeaders, signup } from '../services/services'
+import Background from '../form.png'
 
 class signupForm extends Component  {
   state = {
@@ -12,35 +13,35 @@ class signupForm extends Component  {
           error: null
       };
 
+
 handleChange = (name, value) => {
     this.setState({
       [name]: value
     })
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("you are hiting the fetch function on the signup form page");
-    const { name, email, image_url, password } = this.state
-    signup( { name, email, image_url, password } )
-      .then((data) => {
+handleSubmit = (e) => {
+  console.log("you are hiting the fetch function on the signup form page");
+  const { name, email, image_url, password } = this.state
+  signup( { name, email, image_url, password } )
+  .then((data) => {
       console.log('response data coming backkkkk:', data)
-        if (data.result === 'ok'){
-          window.location = '/profile'
-        }
-      })
-      .then(this.setState({
-        name: '',
-        email: '',
-        image_url: '',
-        password: ''
-    }))
-  }
+    if (data.message === 'User created successfully.'){
+      window.location = '/login'
+    }
+  })
+  .then(this.setState({
+    name: '',
+    email: '',
+    image_url: '',
+    password: ''
+  }))
+}
 
 
   render(){
     return(
-      <Segment style={{width:1300,marginTop:100}}>
+      <Segment style={{ marginTop: 150, backgroundImage: "url(" + { Background } + ")"}}>
         <SingupFormComponent
           // response={this.response}
           name={this.state.name}
@@ -49,6 +50,8 @@ handleChange = (name, value) => {
           password={this.state.password}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          validate={this.validate}
+
         />
       </Segment>
     )

@@ -1,5 +1,6 @@
+
 import React, { Component } from 'react';
-import { Divider, Form, Label, Checkbox, Button, Segment } from 'semantic-ui-react';
+import { Divider, Form, Checkbox, Button, Segment } from 'semantic-ui-react';
 
 class LabelExamplePointing extends Component {
   render() {
@@ -9,28 +10,38 @@ class LabelExamplePointing extends Component {
 
     // updateName
     const updateName = (e) => {
-      e.prevtDefault();
-      this.props.updateFormState('name', e.target.value);
+      e.preventDefault();
+      this.props.handleChange('name', e.target.value);
     };
     // updateEmail
     const updateEmail = (e) => {
       e.preventDefault();
-      this.props.updateFormState('email', e.target.value);
+      this.props.handleChange('email', e.target.value);
     };
     // updateImage
     const updateImage = (e) => {
-      e.preventDefault('image_url', e.target.value);
-      this.props.updateFormState('image_url', e.target.value);
+      e.preventDefault();
+      this.props.handleChange('image_url', e.target.value);
     };
     // update password
     const updatePassword = (e) => {
-      e.preventDefault('password', e.target.value);
-      this.props.updateFormState('password', e.target.value);
+      e.preventDefault();
+      this.props.handleChange('password', e.target.value);
+    };
+
+    const submitForm = (e) => {
+      e.preventDefault();
+      console.log('About to submit: ', {
+        name, email, image_url, password,
+      });
+      this.props.handleSubmit({
+        name, email, image_url, password,
+      });
     };
 
     return (
       <Segment style={{ backgroundColor: 'lightgrey', marginLeft: 100, marginRight: 100 }}>
-        <Form >
+        <Form onSubmit={submitForm}>
           <Form.Field >
             <Divider />
               <input
@@ -73,11 +84,10 @@ class LabelExamplePointing extends Component {
                       fluid
                       size="large"
                       style={{ color: 'orange' }}
-                      href="/profile"
+                      href=""
                       type="submit"
-                      onClick={this.props.sendData}
                     >
-            Submit
+                      Submit
                     </Button>
         </Form>
       </Segment>
