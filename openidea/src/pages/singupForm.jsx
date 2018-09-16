@@ -41,7 +41,7 @@ handleSubmit = (e) => {
 
   render(){
     return(
-      <Segment style={{ marginTop: 150, backgroundImage: "url(" + { Background } + ")"}}>
+      <Segment style={{ marginTop: 150, marginLeft:50,marginRight:50,backgroundImage: "url(" + { Background } + ")"}}>
         <SingupFormComponent
           // response={this.response}
           name={this.state.name}

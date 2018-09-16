@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Login from '../component/login.jsx'
-import {  handleLogin } from '../services/services'
+import {  handleLogin,currentUserId } from '../services/services'
 
 
 class LoginPage extends Component  {
   state = {
     email: "",
-    password: ""
+    password: "",
+    users_id:currentUserId()
   }
 
 
@@ -19,11 +20,13 @@ class LoginPage extends Component  {
     handleSubmit = (e) => {
       e.preventDefault()
       console.log("you are hiting the fetch function on the login form page");
-      const { email, password } = this.state
+      const { email, password} = this.state
       console.log(this.state,"<<<this is the state before handle the login");
       handleLogin( { email, password } )
-      .then(() => this.props.history.push('/profile'))
-      // .catch((err) => 'You are not allowed')
+      
+       
+      .then(() => this.props.history.push('/idea'))
+      .catch((err) => 'You are not allowed')
     }
 
 
@@ -34,6 +37,7 @@ class LoginPage extends Component  {
         style={{width:1300,marginTop:100}}
         email={this.state.email}
         password={this.state.password}
+        users_id={this.state.currentUserId}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
       />

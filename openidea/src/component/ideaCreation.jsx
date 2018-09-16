@@ -5,37 +5,37 @@ import { Divider, Form, Checkbox, Button, Segment } from 'semantic-ui-react';
 class LabelExamplePointing extends Component {
   render() {
     const {
-      name, email, image_url, password,
+      users_id, title, description, image_url, label,
     } = this.props;
 
-    // updateName
-    const updateName = (e) => {
+    // updateTitle
+    const updateTitle = (e) => {
       e.preventDefault();
-      this.props.handleChange('name', e.target.value);
+      this.props.handleChange('title', e.target.value);
     };
-    // updateEmail
-    const updateEmail = (e) => {
+    // updateDescription
+    const updateDescription = (e) => {
       e.preventDefault();
-      this.props.handleChange('email', e.target.value);
+      this.props.handleChange('description', e.target.value);
     };
     // updateImage
     const updateImage = (e) => {
       e.preventDefault();
       this.props.handleChange('image_url', e.target.value);
     };
-    // update password
-    const updatePassword = (e) => {
+    // update label
+    const updateLabel = (e) => {
       e.preventDefault();
-      this.props.handleChange('password', e.target.value);
+      this.props.handleChange('label', e.target.value);
     };
 
     const submitForm = (e) => {
       e.preventDefault();
       console.log('About to submit: ', {
-        name, email, image_url, password,
+        users_id, title, description, image_url, label,
       });
       this.props.handleSubmit({
-        name, email, image_url, password,
+        users_id, title, description, image_url, label,
       });
     };
 
@@ -46,18 +46,18 @@ class LabelExamplePointing extends Component {
             <Divider />
               <input
                 type="text"
-                placeholder="name"
-                className="name"
-                onChange={updateName}
+                placeholder="Idea title"
+                className="title"
+                onChange={updateTitle}
               />
           </Form.Field>
 
             <Form.Field >
               <input
-                type="email"
-                placeholder="email"
-                className="email"
-                onChange={updateEmail}
+                type="text"
+                placeholder="Idea description"
+                className="description"
+                onChange={updateDescription}
               />
             </Form.Field>
               <Form.Field >
@@ -71,10 +71,10 @@ class LabelExamplePointing extends Component {
               </Form.Field>
                 <Form.Field >
                   <input
-                    type="password"
-                    placeholder="Password"
-                    className="password"
-                    onChange={updatePassword}
+                    type="text"
+                    placeholder="Public or Private"
+                    className="label"
+                    onChange={updateLabel}
                   />
                 </Form.Field>
                   <Form.Field>
@@ -88,7 +88,7 @@ class LabelExamplePointing extends Component {
                       href=""
                       type="submit"
                     >
-                      Submit
+                        Submit
                     </Button>
         </Form>
       </Segment>
