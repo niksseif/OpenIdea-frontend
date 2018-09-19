@@ -8,7 +8,7 @@ class LabelExamplePointing extends Component {
       name, email, image_url, password,
     } = this.props;
 
-    // updateName
+    // updateName1
     const updateName = (e) => {
       e.preventDefault();
       this.props.handleChange('name', e.target.value);

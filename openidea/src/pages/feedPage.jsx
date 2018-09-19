@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import ProfileNav from '../component/profileNav'
 import FeedList from '../component/feedlist.jsx'
-import { getHeaders } from '../services/services'
+import { getHeaders, isLoggedIn, currentUserId } from '../services/services'
+
 
 
 class FeedPage extends Component  {
   state = {
     publicIdeas:[],
-    users:[]
+    user:[]
   }
     //Connect to backend to grab API
     componentDidMount = async () => {
@@ -17,21 +18,24 @@ class FeedPage extends Component  {
     // loading messages from the server
     getDataFromAPI = async () => {
       try{
-        const publicIdeasJson = await fetch('http://localhost:5000/ideas',{
+        const publicIdeasJson = await fetch('https://openidea-python.herokuapp.com/ideas',{
             method:'GET',
             headers: getHeaders(),
           })
-        let publicIdeas = await publicIdeasJson.json(); 
-
-        let users_id = publicIdeas.forEach((idea)=>{
-            return idea.users_id
-        })  
-
+        const usersJson = await fetch('https://openidea.herokuapp.com/users', {
+          method: 'GET',
+          headers: getHeaders(),
+        })
+        let user = await usersJson.json();
+        let publicIdeas = await publicIdeasJson.json();  
+        console.log(publicIdeas,"<<<publicIdeas from feed page")
+        console.log(user,"<<<<userzzzzz")
+ 
         let publicLabel = publicIdeas.forEach((idea) => {
           if (idea.label === 'public'){
             this.setState({
               publicIdeas,
-              users_id
+              user
             })
           }
         })       
@@ -44,7 +48,7 @@ class FeedPage extends Component  {
       return(
         <div>
           <ProfileNav
-            user ={this.state.users_id === undefined ? null : this.state.users_id }
+            users ={this.state.user[0]}
             publicIdeas={this.state.publicIdeas}
           />
           <FeedList

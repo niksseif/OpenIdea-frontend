@@ -17,6 +17,7 @@ class ProfilePage extends Component  {
   state = {
     users: [],
     ideas:[],
+    id:currentUserId()
   };
 
 
@@ -41,17 +42,18 @@ class ProfilePage extends Component  {
       
       let id = currentUserId()
       let users = await usersJson.json();
-      // console.log(users,"<<users")
-      // console.log(id, "<<usersId")
+      console.log(users,"<<<users from profile page")
+      console.log(users, "<<<users from profile page")
 
       let ideas = users.ideas
-      // let id = users.id
+      console.log(ideas,"<<<ideas")
+      
      
 
       this.setState({
          users,
          ideas,
-         id  
+         id:currentUserId()
       })
     }
     //these functions are for callapsing the idea card with all the data in it
@@ -61,10 +63,11 @@ class ProfilePage extends Component  {
       <div>
           {/*  This will be the logged in user getting passed in to the Profile */}
         <ProfileNav
-          users ={this.state.users === undefined ? null : this.state.users[this.props.id] }
+          key ={this.state.id === undefined ? null : this.state.id }
+          users= {this.state.users === undefined ? null : this.state.users}
          />
         <CategoryCards
-          users ={this.state.users === undefined ? null : this.state.users[this.props.id] }
+          users ={this.state.users === undefined ? null : this.state.users[0] }
           ideas={this.state.ideas}
           key = {this.props.id}
         />

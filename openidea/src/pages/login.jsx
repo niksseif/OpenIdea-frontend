@@ -25,7 +25,7 @@ class LoginPage extends Component  {
       handleLogin( { email, password } )
       
        
-      .then(() => this.props.history.push('/idea'))
+      .then(() => this.props.history.push('/profile'))
       .catch((err) => 'You are not allowed')
     }
 
@@ -37,7 +37,7 @@ class LoginPage extends Component  {
         style={{width:1300,marginTop:100}}
         email={this.state.email}
         password={this.state.password}
-        users_id={this.state.currentUserId}
+        users_id={this.state.users_id}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
       />

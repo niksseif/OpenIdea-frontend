@@ -68,25 +68,22 @@ export const currentUserId = () => {
   if (isLoggedIn()) {
     const jwtToken = localStorage.getItem('access_token');
     const decoded = jwt_decode(jwtToken);
-    return decoded.identity;
+    return 1;
+    // return decoded.identity;
   }
 };
 
 export const createIdea = async (data) => {
-  const response = await fetch('https://openidea-python.herokuapp.com/ideas', {
+  const response = await fetch('https://openidea-python.herokuapp.com/users/ideas', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
       Accepts: 'application/json',
-
     },
     body: JSON.stringify(data),
   });
   const res = await response.json();
   console.log(res, '<<<Res from idea creation');
-
-  // localStorage.setItem('access_token', JSON.stringify(res.access_token));
-  // localStorage.setItem('currentUser.id',JSON.stringify(res.user.id))
   return res;
 };
 
