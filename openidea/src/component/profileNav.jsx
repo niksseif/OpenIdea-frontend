@@ -20,7 +20,8 @@ export default class Profile extends Component {
 
   render() {
     const { activeItem } = this.state
-    const { users } = this.props
+    const { id, users } = this.props
+    console.log(this.props,"<<<<")
     return (
       <Menu stackable>
         <Menu.Item>

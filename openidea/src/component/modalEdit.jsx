@@ -41,7 +41,7 @@ class ModalEdit extends Component {
 
 //this is the PUT
   fileUploadHandler = async () => {
-      const response = await fetch(`http://localhost:5000/ideas/${this.props.idea.id}`, {
+    const response = await fetch(`https://openidea-python.herokuapp.com/ideas/${this.props.idea.id}`, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',

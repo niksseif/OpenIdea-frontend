@@ -4,8 +4,8 @@ import { Container, Row, Col } from 'reactstrap';
 import PublicLabel from './publicLabel';
 
 const imageStyle = {
-  width: '450px',
-  height: '450px',
+  width: '400px',
+  height: '400px',
 
 };
 class Feed extends Component {
@@ -13,9 +13,8 @@ class Feed extends Component {
     const { publicIdea, userImage } = this.props;
     return (
       <div
-        center
         className="ui compact segment"
-        style={{ marginLeft: 450 }}
+        style={{ display: 'flex', justifyContent: 'center' }}
       >
         <Segment >
           <Image
@@ -27,16 +26,16 @@ class Feed extends Component {
               position="left"
             >
               <Segment>
-                  {publicIdea.title}
-                </Segment>
+                {publicIdea.title}
+              </Segment>
             </Rail>
 
               <Segment
-                  style={{ width: 450 }}
-                >
-                  {publicIdea.description}
-                </Segment>
-                  <PublicLabel />
+                style={{ width: 450 }}
+              >
+                {publicIdea.description}
+              </Segment>
+                <PublicLabel />
         </Segment>
       </div>
     );

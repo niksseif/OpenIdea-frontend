@@ -8,6 +8,7 @@ import SignupForm from './pages/singupForm'
 import Profile from './pages/profile'
 import Feed from './pages/feedPage'
 import Login from './pages/login'
+import CreateIdea from './pages/signupIdea'
 
 
 
@@ -29,6 +30,7 @@ class App extends Component {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/feeds" component={Feed} />
         <Route exact path="/login" component={Login} />
+        <Route exact path = "/idea" component={CreateIdea}/>
       </Switch>
 
       </div>
