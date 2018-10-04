@@ -23,6 +23,7 @@ open http://localhost:3000
 # Built With
 React for the front-end https://github.com/niksseif/OpenIdea-frontend.
 React_Bootstrap - The frontend framework used.
+React-semantic-ui
 npm - Dependency Management
 Knex - Used to generate database and backend structure.
 Postgress - Used for the data base
