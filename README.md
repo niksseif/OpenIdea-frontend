@@ -28,6 +28,7 @@ npm - Dependency Management
 Knex - Used to generate database and backend structure.
 Postgress - Used for the data base
 
+
 # License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
