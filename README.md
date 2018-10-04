@@ -28,7 +28,7 @@ npm - Dependency Management
 Knex - Used to generate database and backend structure.
 Postgress - Used for the data base
 
-#Screen shot of
+# Screen shot of
 
 
 <img width="723" alt="screen shot 2018-10-04 at 12 05 33 pm" src="https://user-images.githubusercontent.com/24830759/46496829-daed2d80-c7cd-11e8-9521-459156fe644f.png">
