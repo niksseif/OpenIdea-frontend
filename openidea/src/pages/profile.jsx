@@ -34,14 +34,15 @@ class ProfilePage extends Component  {
   // loading messages from the server
     getDataFromAPI = async () => {
       // fetch usersJson
-      const usersJson = await fetch(`https://openidea-python.herokuapp.com/user/${currentUserId()}/ideas`,{
+      let id = currentUserId()
+      const usersJson = await fetch(`https://openidea-python.herokuapp.com/user/${id}/ideas`,{
         method:'GET',
         headers: getHeaders(),
       })
-      
-      let id = currentUserId()
       let users = await usersJson.json();
-      // console.log(users,"<<users")
+      
+      console.log(id,"<<<<id from profile")
+      console.log(users,"<<users from profile page")
       // console.log(id, "<<usersId")
 
       let ideas = users.ideas
@@ -57,15 +58,16 @@ class ProfilePage extends Component  {
     //these functions are for callapsing the idea card with all the data in it
 
   render(){
+    const {id } = this.props
     return(
       <div>
           {/*  This will be the logged in user getting passed in to the Profile */}
         <ProfileNav
-          users ={this.state.users === undefined ? null : this.state.users[this.props.id] }
+          users ={this.state.users === undefined ? null : this.state.users }
          />
         <CategoryCards
-          users ={this.state.users === undefined ? null : this.state.users[this.props.id] }
-          ideas={this.state.ideas}
+          users ={this.state.users === undefined ? null : this.state.users[id] }
+          ideas={this.state.ideas === undefined ? null : this.state.ideas}
           key = {this.props.id}
         />
       </div>

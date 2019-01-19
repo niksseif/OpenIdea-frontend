@@ -20,7 +20,7 @@ class LoginPage extends Component  {
       e.preventDefault()
       console.log("you are hiting the fetch function on the login form page");
       const { email, password } = this.state
-      console.log(this.state,"<<<this is the state before handle the login");
+      // console.log(this.state,"<<<this is the state before handle the login");
       handleLogin( { email, password } )
       .then(() => this.props.history.push('/profile'))
       // .catch((err) => 'You are not allowed')

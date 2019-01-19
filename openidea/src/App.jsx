@@ -8,7 +8,7 @@ import SignupForm from './pages/singupForm'
 import Profile from './pages/profile'
 import Feed from './pages/feedPage'
 import Login from './pages/login'
-
+import Create from './pages/create'
 
 
 
@@ -28,7 +28,8 @@ class App extends Component {
         <Route exact path="/signup" component={SignupForm} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/feeds" component={Feed} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login" component={Login} />  
+          <Route exact path="/create" component={Create} />
       </Switch>
 
       </div>

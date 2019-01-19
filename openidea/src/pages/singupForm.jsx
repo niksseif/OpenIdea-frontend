@@ -27,7 +27,9 @@ handleSubmit = (e) => {
   .then((data) => {
       console.log('response data coming backkkkk:', data)
     if (data.message === 'User created successfully.'){
-      window.location = '/login'
+      window.location = '/create'
+    } else if (data.message === 'A user with that email already exists'){
+      return (alert ('A user with that email exist'), window.location='/login')
     }
   })
   .then(this.setState({

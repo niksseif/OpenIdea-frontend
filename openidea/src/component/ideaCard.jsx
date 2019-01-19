@@ -3,7 +3,7 @@ import { Card, Icon, Image } from 'semantic-ui-react';
 
 const IdeaCard = props => (
   // need to bring source for the image card as src
-  <Card>
+  <Card style={{ margin: '1vw' }}>
     <Image src={props.image} />
       <Card.Content>
         <Card.Header>{props.title}</Card.Header>

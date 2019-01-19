@@ -2,7 +2,7 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
 import landingpageImage from '../landingPage2.png';
-
+import ProgressiveImage from 'react-progressive-image';
 
 const imageStyle = {
   width: '100%',
@@ -22,11 +22,17 @@ const top = {
 const ImageExampleFluid = () => (
   <div className="container">
 
-    <Image
+    <ProgressiveImage
+      delay={400}
+      placeholder="tiny-image.jpg"
       src={landingpageImage}
       fluid
       style={imageStyle}
-    />
+    >
+      {(src, loading) => (
+        <Image style={{ opacity: loading ? 0.5 : 1, width: '100%' }} src={landingpageImage} alt="Open idea" />
+      )}
+    </ProgressiveImage>
       <h1
         style={top}
       >

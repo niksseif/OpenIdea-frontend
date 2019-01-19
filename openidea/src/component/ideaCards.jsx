@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import { Card } from 'semantic-ui-react';
 import IdeaCard from './ideaCard';
-import StackGrid from 'react-stack-grid';
+// import StackGrid from 'react-stack-grid';
+import { Grid, GridColumn } from 'semantic-ui-react';
 
 class IdeaCards extends Component {
   render() {
     return (
-      <StackGrid
-        columnWidth={300}
+      // <StackGrid
+      <Grid
+        style={{ paddingLeft: '8vw', position: 'center' }}
+        columns={6}
       >
+
         {this.props.ideas.map(idea => (
           <IdeaCard
+
             key={idea.id}
             name={idea.title}
             color={idea.color}
@@ -18,7 +22,9 @@ class IdeaCards extends Component {
             description={idea.description}
           />
         ))}
-      </StackGrid>
+
+      </Grid>
+      // {/* </StackGrid> */}
 
     );
   }

@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react'
 import { Menu,Image } from 'semantic-ui-react'
-import ImageExampleFluid from './image'
+
 
 export default class Profile extends Component {
   state = {}

@@ -28,7 +28,7 @@ class CategoryCard extends Component {
     const {activeIndex} = this.state
     const { idea, users, categories, setIndex } = this.props
 
-    console.log(idea, "idea from category card");
+    // console.log(idea, "idea from category card");
     return(
       <div>
         <Card style={{marginBottom:5, margin:10}}>

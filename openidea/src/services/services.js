@@ -30,7 +30,7 @@ export const signup = async (data) => {
   const res = await response.json();
 
   // localStorage.setItem('access_token', JSON.stringify(res.access_token));
-  // localStorage.setItem('currentUser.id',JSON.stringify(res.user.id))
+  // localStorage.setItem('currentUser.id', JSON.stringify(res.user.id));
   return res;
 };
 // handle login
@@ -68,6 +68,7 @@ export const currentUserId = () => {
     const jwtToken = localStorage.getItem('access_token');
     const decoded = jwt_decode(jwtToken);
     console.log(decoded.identity, '<<<<decoded');
+    console.log(localStorage.getItem('access_token'), '<<<<<<<access token ');
     return decoded.identity;
   }
 };

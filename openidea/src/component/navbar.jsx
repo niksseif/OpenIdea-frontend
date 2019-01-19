@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-import ImageExampleFluid from './image'
+import ImageExampleFluid from './imageExampleFluidHeader'
 
 export default class MenuExampleStackable extends Component {
   state = {}
