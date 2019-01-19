@@ -63,14 +63,34 @@ export const isLoggedIn = () => {
   }
   return false;
 };
+// handling current user decode
 export const currentUserId = () => {
   if (isLoggedIn()) {
     const jwtToken = localStorage.getItem('access_token');
     const decoded = jwt_decode(jwtToken);
+<<<<<<< HEAD
     console.log(decoded.identity, '<<<<decoded');
     console.log(localStorage.getItem('access_token'), '<<<<<<<access token ');
     return decoded.identity;
+=======
+    return 1;
+    // return decoded.identity;
+>>>>>>> ea5830a50a05c7c45f236a873a441a8efedd83a9
   }
+};
+
+export const createIdea = async (data) => {
+  const response = await fetch('https://openidea-python.herokuapp.com/users/ideas', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      Accepts: 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+  const res = await response.json();
+  console.log(res, '<<<Res from idea creation');
+  return res;
 };
 
 export const logout = () => {

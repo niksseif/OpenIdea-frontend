@@ -17,6 +17,7 @@ class ProfilePage extends Component  {
   state = {
     users: [],
     ideas:[],
+    id:currentUserId()
   };
 
 
@@ -41,18 +42,19 @@ class ProfilePage extends Component  {
       })
       let users = await usersJson.json();
       
-      console.log(id,"<<<<id from profile")
-      console.log(users,"<<users from profile page")
+      // console.log(id,"<<<<id from profile")
+      // console.log(users,"<<users from profile page")
       // console.log(id, "<<usersId")
 
       let ideas = users.ideas
-      // let id = users.id
+      console.log(ideas,"<<<ideas")
+      
      
 
       this.setState({
          users,
          ideas,
-         id  
+         id:currentUserId()
       })
     }
     //these functions are for callapsing the idea card with all the data in it
