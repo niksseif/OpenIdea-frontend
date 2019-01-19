@@ -6,30 +6,30 @@ People have lots of ideas all the time and maybe they write them in their diary,
 # Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.cd into openidea folder
 # Prerequisites
-brew install postgresql . 
-brew install node . 
-npm install react . 
-brew install heroku . 
+brew install postgresql <br>
+brew install node <br>
+npm install react <br>
+brew install heroku <br>
 
 # Installing
 
-git clone https://github.com/niksseif/OpenIdea <br></br>
-cd into openidea . 
-npm i . 
-createdb openIdea_dv . 
-knex migrate:latest . 
-knex seed:run . 
-heroku local . 
-open http://localhost:3000 . 
+git clone https://github.com/niksseif/OpenIdea <br>
+cd into openidea <br>
+npm i <br>
+createdb openIdea_dv <br>
+knex migrate:latest <br>
+knex seed:run <br> 
+heroku local <br>
+open http://localhost:3000 <br>
 
 # Built With
-React for the front-end https://github.com/niksseif/OpenIdea-frontend.
-React_Bootstrap - The frontend framework used.
-React-semantic-ui . 
-npm - Dependency Management . 
-Knex - Used to generate database and backend structure.
-Postgress - Used for the data base . 
-Python, Flask . 
+React for the front-end https://github.com/niksseif/OpenIdea-frontend<br>
+React_Bootstrap - The frontend framework used <br>
+React-semantic-ui <br>
+npm - Dependency Management <br>
+Knex - Used to generate database and backend structure <br>
+Postgress - Used for the data base <br>
+Python, Flask <br>
 
 # Project images
 <img width="723" alt="screen shot 2018-10-04 at 12 05 33 pm" src="https://user-images.githubusercontent.com/24830759/46496829-daed2d80-c7cd-11e8-9521-459156fe644f.png">
