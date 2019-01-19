@@ -13,7 +13,7 @@ brew install heroku .
 
 # Installing
 
-git clone https://github.com/niksseif/OpenIdea . 
+git clone https://github.com/niksseif/OpenIdea <br></br>
 cd into openidea . 
 npm i . 
 createdb openIdea_dv . 
