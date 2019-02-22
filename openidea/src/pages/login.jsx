@@ -19,14 +19,8 @@ class LoginPage extends Component  {
 
     handleSubmit = (e) => {
       e.preventDefault()
-      console.log("you are hiting the fetch function on the login form page");
-<<<<<<< HEAD
+
       const { email, password } = this.state
-      // console.log(this.state,"<<<this is the state before handle the login");
-=======
-      const { email, password} = this.state
-      console.log(this.state,"<<<this is the state before handle the login");
->>>>>>> ea5830a50a05c7c45f236a873a441a8efedd83a9
       handleLogin( { email, password } )
       
        
